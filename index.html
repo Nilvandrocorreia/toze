@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tozé Serviços</title>
+<meta name="description" content="Eletricidade, canalização, serralharia e pintura na ilha de Santiago, Cabo Verde. Orçamento rápido pelo WhatsApp.">
+<meta property="og:title" content="Tozé Serviços">
+<meta property="og:description" content="Eletricidade, canalização, serralharia e pintura na ilha de Santiago, Cabo Verde.">
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: "Graphite & stone". Neutral graphite hero and bands frame warm off-white content sections; gold is the single accent, and the four trade colours are muted (ochre, slate teal, terracotta, dusty violet). Big rounded cards, generous space. */
+:root{
+  --bg:#F5F4F1; --surface:#FFFFFF; --surface-2:#ECEAE5; --ink:#17181B; --muted:#5E6066; --line:#E2DFD8;
+  --brand:#1F2125; --on-brand:#FFFFFF; --wa:#18A04A;
+  --night:#141518; --night-2:#1F2125; --on-night:#F4F3F0; --muted-night:#A8A7A2; --glass-night:rgba(255,255,255,.07); --line-night:rgba(255,255,255,.12);
+  --luz:#D9A441; --luz-soft:#F6EEDC; --agua:#4E9AA6; --agua-soft:#E1EEF0; --ferro:#C2704E; --ferro-soft:#F5E5DD; --tinta:#8C7BB8; --tinta-soft:#ECE8F3;
+  --danger:#C8443A; --ok:#3F8F63; --on-accent:#17181B;
+  --gold-1:#FBE6A2; --gold-2:#E2B04A; --gold-3:#B9842A; --heading:#17181B;
+  --glass:rgba(255,255,255,.8);
+  --house:#ECEAE5; --house-2:#D6D2CA; --hill:#26292E; --hill-2:#30333A;
+  --shadow:0 24px 50px -28px rgba(20,21,24,.3); --shadow-sm:0 8px 20px -14px rgba(20,21,24,.25);
+  --r:24px;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1012; --surface:#18191C; --surface-2:#212327; --ink:#EDECE8; --muted:#A3A29D; --line:#2A2C30;
+  --brand:#E8E6E1; --on-brand:#141518; --wa:#25C35E;
+  --night:#0B0C0E; --night-2:#17181B;
+  --luz-soft:#33291A; --agua-soft:#182A2D; --ferro-soft:#33221B; --tinta:#A596CF; --tinta-soft:#26222F; --on-accent:#0F1012; --heading:#F2D27A;
+  --glass:rgba(20,21,24,.72); --shadow:0 24px 50px -28px rgba(0,0,0,.8); --shadow-sm:0 8px 20px -14px rgba(0,0,0,.7); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1012; --surface:#18191C; --surface-2:#212327; --ink:#EDECE8; --muted:#A3A29D; --line:#2A2C30;
+  --brand:#E8E6E1; --on-brand:#141518; --wa:#25C35E;
+  --night:#0B0C0E; --night-2:#17181B;
+  --luz-soft:#33291A; --agua-soft:#182A2D; --ferro-soft:#33221B; --tinta:#A596CF; --tinta-soft:#26222F; --on-accent:#0F1012; --heading:#F2D27A;
+  --glass:rgba(20,21,24,.72); --shadow:0 24px 50px -28px rgba(0,0,0,.8); --shadow-sm:0 8px 20px -14px rgba(0,0,0,.7); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+html,body{overflow-x:clip}
+.summary{contain:paint}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--night)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.02;letter-spacing:-.025em;text-wrap:balance;margin:0;font-weight:800;color:var(--heading)}
+/* gold titles on the navy areas */
+.hero h1,.cta h2,.plan.feat h3,.plan.feat .price,.summary .tot .big,.cta .bignum{
+  color:var(--gold-2);
+  background:linear-gradient(100deg,var(--gold-3) 0%,var(--gold-2) 25%,var(--gold-1) 50%,var(--gold-2) 75%,var(--gold-3) 100%);
+  background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1{animation:shimmer 7s linear infinite}
+@keyframes shimmer{to{background-position:200% center}}
+.plan.feat .price small{-webkit-text-fill-color:var(--muted-night)}
+h2{font-size:clamp(1.5rem,2.4vw,1.95rem)}
+h3{font-size:1.2rem;letter-spacing:-.01em}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+section{padding-block:clamp(48px,6vw,80px)}
+
+/* section header: label, title, one sentence — the same in every section */
+.sec-head{display:grid;gap:8px;max-width:720px;margin-bottom:32px}
+.sec-head .lead{color:var(--muted);font-size:1rem;max-width:62ch}
+.label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.label::before{content:"";width:22px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--luz),var(--agua),var(--ferro),var(--tinta))}
+
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.dot.luz{background:var(--luz)}.dot.agua{background:var(--agua)}.dot.ferro{background:var(--ferro)}.dot.tinta{background:var(--tinta)}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;padding:5px 11px;border-radius:999px;color:var(--ink)}
+.chip.luz{background:var(--luz-soft)}.chip.agua{background:var(--agua-soft)}.chip.ferro{background:var(--ferro-soft)}.chip.tinta{background:var(--tinta-soft)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 .95rem/1 var(--f-body);padding:14px 22px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 26px -12px rgba(24,160,74,.8)}
+.btn-brand{background:var(--brand);color:var(--on-brand);box-shadow:0 12px 26px -14px rgba(20,21,24,.5)}
+.btn-ghost{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-glass{background:var(--glass-night);border-color:var(--line-night);color:var(--on-night);backdrop-filter:blur(8px)}
+.btn-glass:hover{background:rgba(255,255,255,.16)}
+.btn-sm{padding:11px 16px;font-size:.92rem}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(20,21,24,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line-night);color:var(--on-night)}
+.top .bar{display:flex;align-items:center;gap:16px;min-height:104px}
+@media (max-width:600px){.top .bar{min-height:80px}}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+/* logo: the name TOZÉ where every letter is one trade, in gold only:
+   T = paint roller (pintura), O = water drop (canalização), Z = lightning (eletricidade), É = riveted iron bars (serralharia).
+   The letters drop in one by one on load; every 5 s each one acts in turn: roller rolls and drips, drop bounces, bolt flashes, iron clangs. */
+.tz{height:74px;width:auto;display:block;overflow:visible;filter:drop-shadow(0 2px 10px rgba(226,176,74,.32))}
+@media (max-width:600px){.tz{height:52px}}
+.tz-l{transform-box:fill-box;transform-origin:50% 100%;animation:tzIn .5s cubic-bezier(.2,.9,.3,1.5) both}
+.tz-t{animation:tzIn .5s cubic-bezier(.2,.9,.3,1.5) .05s both}
+.tz-roll{transform-box:fill-box;transform-origin:center;animation:roll 5s ease-in-out 1.4s infinite}
+.tz-o{animation:tzIn .5s cubic-bezier(.2,.9,.3,1.5) .18s both, drop 5s ease-in-out 1.4s infinite}
+.tz-z{transform-origin:50% 50%;animation:tzIn .5s cubic-bezier(.2,.9,.3,1.5) .31s both, zapZ 5s ease-in-out 1.4s infinite}
+.tz-e{animation:tzIn .5s cubic-bezier(.2,.9,.3,1.5) .44s both, clang 5s ease-in-out 1.4s infinite}
+.tz-drip{transform-box:fill-box;transform-origin:50% 0;animation:drip 5s ease-in-out 1.4s infinite}
+.logo-sub{font-size:.72rem;line-height:1.4;letter-spacing:.16em;color:var(--muted-night);border-left:1px solid var(--line-night);padding-left:12px;font-weight:600}
+@media (max-width:600px){.logo-sub{font-size:.62rem;padding-left:9px}}
+@media (max-width:400px){.logo-sub{display:none}}
+.logo:hover .tz-roll{animation:rollFast .7s ease-in-out infinite}
+@keyframes tzIn{0%{transform:translateY(-14px) scale(.6);opacity:0}100%{transform:none;opacity:1}}
+@keyframes roll{0%,62%,80%,100%{transform:none}66%{transform:translateX(-2.5px)}71%{transform:translateX(2.5px)}76%{transform:translateX(-1px)}}
+@keyframes rollFast{0%,100%{transform:translateX(-2.5px)}50%{transform:translateX(2.5px)}}
+@keyframes clang{0%,86%,96%,100%{transform:none}88%{transform:translateX(1.5px)}90%{transform:translateX(-1.5px)}92%{transform:translateX(1px)}94%{transform:translateX(-.5px)}}
+@keyframes drop{0%,70%,86%,100%{transform:none}74%{transform:translateY(3px) scaleY(.88) scaleX(1.06)}79%{transform:translateY(-3px) scaleY(1.05)}83%{transform:translateY(1px)}}
+@keyframes zapZ{0%,77%,90%,100%{opacity:1;transform:none}79%{opacity:.3}81%{opacity:1;transform:scale(1.14)}84%{opacity:.6}86%{opacity:1;transform:none}}
+@keyframes drip{0%,66%,84%,100%{transform:none}74%{transform:scaleY(1.9)}80%{transform:scaleY(1)}}
+@keyframes logoIntro{0%{transform:scale(.2) rotate(-200deg);opacity:0}60%{transform:scale(1.45) rotate(12deg);opacity:1}80%{transform:scale(.94) rotate(-3deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes logoBeat{0%,72%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(226,176,74,0)}80%{transform:scale(1.1);box-shadow:0 0 0 5px rgba(226,176,74,.22)}90%{transform:scale(.98)}}
+@keyframes zap{0%,74%,100%{opacity:1;transform:scale(1)}78%{opacity:.35;transform:scale(.8)}82%{opacity:1;transform:scale(1.25)}}
+/* sparks fly out of the logo on every beat */
+.logo-wrap{position:relative;display:grid;place-items:center;flex:none}
+.spark{position:absolute;left:61%;top:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:var(--gold-1);box-shadow:0 0 6px var(--gold-2);opacity:0;pointer-events:none;animation:spark 5s ease-out 1.4s infinite}
+@keyframes spark{0%,78%{transform:translate(0,0) scale(0);opacity:0}81%{transform:translate(calc(var(--dx)*.3),calc(var(--dy)*.3)) scale(1.3);opacity:1}93%{transform:translate(var(--dx),var(--dy)) scale(.3);opacity:0}100%{opacity:0}}
+.logo:hover .spark{animation:spark-hover .9s ease-out infinite}
+@keyframes spark-hover{0%{transform:translate(0,0) scale(0);opacity:0}20%{opacity:1;transform:translate(calc(var(--dx)*.3),calc(var(--dy)*.3)) scale(1.3)}100%{transform:translate(var(--dx),var(--dy)) scale(.3);opacity:0}}
+@keyframes nameShine{0%,70%{background-position:100% center}100%{background-position:-50% center}}
+.logo b{font-family:var(--f-display);font-size:1.4rem;font-weight:800;letter-spacing:-.02em;line-height:1;display:block}
+.logo small{display:block;font-size:.62rem;letter-spacing:.14em;color:var(--muted-night);margin-top:3px}
+nav.main{display:flex;gap:2px;margin-left:auto}
+nav.main a{text-decoration:none;font-weight:500;font-size:.95rem;padding:9px 13px;border-radius:999px;color:var(--muted-night);white-space:nowrap;transition:.2s}
+nav.main a:hover{color:var(--on-night);background:var(--glass-night)}
+.urg{background:var(--danger);color:#fff;font-weight:600;font-size:.9rem;padding:10px 16px;border-radius:999px;text-decoration:none;white-space:nowrap;display:inline-flex;gap:8px;align-items:center}
+.urg i{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.3}}
+@media (max-width:1240px){
+  .top .bar{flex-wrap:wrap;justify-content:space-between;padding-top:10px}
+  nav.main{order:3;width:100%;margin:0;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+  nav.main::-webkit-scrollbar{display:none}
+  nav.main a{background:var(--glass-night);color:var(--on-night);font-size:.88rem}
+}
+
+/* ===== header v2: graphite glass, gold line, shine on the logo, shrink on scroll, scroll-spy menu ===== */
+header.top{overflow:hidden;background:linear-gradient(180deg,rgba(20,21,24,.92),rgba(20,21,24,.8));transition:box-shadow .35s,background .35s;animation:hdrIn .7s cubic-bezier(.2,.8,.2,1) both}
+header.top::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--gold-3),var(--gold-1),var(--gold-3),transparent);background-size:200% 100%;animation:goldLine 6s linear infinite;z-index:2}
+header.top::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(var(--prog,0));background:linear-gradient(90deg,var(--gold-3),var(--gold-1));z-index:2}
+.top .glow{position:absolute;left:-60px;top:-80%;width:460px;height:260%;background:radial-gradient(closest-side,rgba(226,176,74,.17),transparent 70%);pointer-events:none;animation:glowDrift 9s ease-in-out infinite alternate}
+.top .bar{position:relative;transition:min-height .35s ease}
+.tz{transition:height .35s ease}
+header.top.scrolled{background:rgba(15,16,18,.94);box-shadow:0 14px 40px -18px rgba(0,0,0,.75)}
+header.top.scrolled .bar{min-height:72px}
+header.top.scrolled .tz{height:54px}
+@media (max-width:600px){header.top.scrolled .bar{min-height:62px}header.top.scrolled .tz{height:42px}}
+.tz-shine{animation:tzShine 7s cubic-bezier(.4,0,.2,1) 1s infinite}
+.logo:hover .tz{filter:drop-shadow(0 2px 16px rgba(226,176,74,.55))}
+.logo .logo-sub{display:grid;gap:1px;margin:0;animation:subIn .8s ease .7s both}
+@media (max-width:440px){.logo .logo-sub{display:none}}
+.logo-sub .tr{display:flex;gap:5px;margin-top:6px}
+.logo-sub .tr i{width:5px;height:5px;border-radius:50%;animation:trPulse 4s ease-in-out infinite}
+.logo-sub .tr i:nth-child(1){background:var(--luz)}
+.logo-sub .tr i:nth-child(2){background:var(--agua);animation-delay:.25s}
+.logo-sub .tr i:nth-child(3){background:var(--ferro);animation-delay:.5s}
+.logo-sub .tr i:nth-child(4){background:var(--tinta);animation-delay:.75s}
+nav.main a{position:relative;animation:navIn .5s ease both}
+nav.main a:nth-child(1){animation-delay:.25s}nav.main a:nth-child(2){animation-delay:.31s}nav.main a:nth-child(3){animation-delay:.37s}nav.main a:nth-child(4){animation-delay:.43s}nav.main a:nth-child(5){animation-delay:.49s}nav.main a:nth-child(6){animation-delay:.55s}nav.main a:nth-child(7){animation-delay:.61s}
+nav.main a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--gold-3),var(--gold-1));transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+nav.main a:hover::after,nav.main a.active::after{transform:scaleX(1)}
+nav.main a.active{color:var(--gold-1)}
+.urg{position:relative;isolation:isolate;box-shadow:0 10px 24px -10px rgba(200,68,58,.85);transition:transform .2s,box-shadow .2s;animation:navIn .5s ease .7s both}
+.urg::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid var(--danger);z-index:-1;animation:ping 2.2s cubic-bezier(0,0,.2,1) infinite}
+.urg:hover{transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(200,68,58,.95)}
+@keyframes hdrIn{from{transform:translateY(-100%);opacity:0}to{transform:none;opacity:1}}
+@keyframes goldLine{to{background-position:-200% 0}}
+@keyframes glowDrift{to{transform:translateX(70px)}}
+@keyframes tzShine{0%{transform:translateX(0)}20%,100%{transform:translateX(175px)}}
+@keyframes subIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes navIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes trPulse{0%,24%,100%{transform:scale(1);opacity:.55}12%{transform:scale(1.7);opacity:1}}
+@keyframes ping{0%{transform:scale(1);opacity:.8}75%,100%{transform:scale(1.25,1.5);opacity:0}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--night);color:var(--on-night);padding-block:clamp(36px,5vw,64px)}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70%;height:120%;background:radial-gradient(closest-side,rgba(226,176,74,.14),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto auto -40% -15%;width:70%;height:110%;background:radial-gradient(closest-side,rgba(255,255,255,.05),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+.pill-top{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:var(--glass-night);border:1px solid var(--line-night);font-size:.88rem;color:var(--muted-night)}
+.pill-top b{background:var(--luz);color:var(--night);padding:3px 9px;border-radius:999px;font-size:.75rem}
+.hero h1{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-top:18px;max-width:20ch}
+.hero .lead{color:var(--muted-night);font-size:1rem;max-width:50ch;margin-top:14px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.roles{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:560px}
+@media (max-width:420px){.roles{grid-template-columns:1fr}}
+.roles li{display:flex;align-items:center;gap:13px;padding:13px 14px;border-radius:18px;background:var(--glass-night);border:1px solid var(--line-night);min-width:0}
+.roles .ic{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;flex:none;color:#fff}
+.roles .ic svg{width:21px;height:21px}
+.roles .luz .ic{background:var(--luz);color:var(--night)}.roles .agua .ic{background:var(--agua)}.roles .ferro .ic{background:var(--ferro)}.roles .tinta .ic{background:var(--tinta)}
+.roles div{min-width:0}
+.roles b{display:block;font-family:var(--f-display);font-size:1rem;letter-spacing:-.01em;line-height:1.2}
+.roles span{display:block;font-size:.84rem;color:var(--muted-night);line-height:1.35}
+
+.scene{position:relative;min-width:0}
+.scene svg{width:100%;height:auto;display:block;border-radius:28px}
+.flow{fill:none;stroke-linecap:round;stroke-dasharray:10 14;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-48}}
+.glow{animation:glow 3s ease-in-out infinite}
+@keyframes glow{50%{opacity:.55}}
+.float{position:absolute;display:flex;align-items:center;gap:11px;padding:11px 15px 11px 11px;border-radius:16px;background:rgba(30,32,36,.66);border:1px solid var(--line-night);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 18px 40px -20px rgba(0,0,0,.6);font-size:.9rem;animation:bob 6s ease-in-out infinite}
+.float .ic{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;flex:none}
+.float .ic svg{width:19px;height:19px}
+.float b{display:block;font-size:.95rem}
+.float span{color:var(--muted-night);font-size:.8rem}
+.float.f1{top:6%;left:-4%}
+.float.f2{top:44%;right:-4%;animation-delay:-2s}
+.float.f3{bottom:5%;left:6%;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media (max-width:560px){.float{font-size:.8rem;padding:8px 11px 8px 8px}.float .ic{width:30px;height:30px}.float.f1{left:0}.float.f2{right:0}.float span{display:none}}
+
+/* trust bar */
+.trustbar{background:var(--surface);border-bottom:1px solid var(--line);padding-block:22px}
+.trustbar .wrap{display:flex;flex-wrap:wrap;gap:14px 36px;justify-content:space-between;align-items:center}
+.trustbar div{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem}
+.trustbar svg{width:22px;height:22px;color:var(--brand);flex:none}
+
+/* services */
+.trades{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media (max-width:820px){.trades{grid-template-columns:1fr}}
+.trade{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;align-content:start;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;min-width:0}
+.trade:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.trade .top{position:relative;padding:22px 24px 18px;overflow:hidden;display:flex;align-items:center;gap:14px}
+.trade.luz .top{background:linear-gradient(140deg,var(--luz-soft),var(--surface))}
+.trade.agua .top{background:linear-gradient(140deg,var(--agua-soft),var(--surface))}
+.trade.ferro .top{background:linear-gradient(140deg,var(--ferro-soft),var(--surface))}
+.trade.tinta .top{background:linear-gradient(140deg,var(--tinta-soft),var(--surface))}
+.trade .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#fff;flex:none}
+.trade.luz .ico{background:var(--luz);color:var(--night)}.trade.agua .ico{background:var(--agua)}.trade.ferro .ico{background:var(--ferro)}.trade.tinta .ico{background:var(--tinta)}
+.trade .ico svg{width:23px;height:23px}
+.trade .who{font-size:.85rem;color:var(--muted);margin-top:2px}
+.trade h3{font-size:1.25rem}
+.trade .big-ico{position:absolute;right:-16px;top:-16px;width:110px;height:110px;opacity:.08}
+.trade.luz .big-ico{color:var(--luz)}.trade.agua .big-ico{color:var(--agua)}.trade.ferro .big-ico{color:var(--ferro)}.trade.tinta .big-ico{color:var(--tinta)}
+.trade ul{list-style:none;padding:4px 24px;margin:0}
+.trade li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.trade li:last-child{border-bottom:0}
+.trade li .num{color:var(--muted);font-size:.88rem;white-space:nowrap}
+.trade .tip{margin:4px 24px 0;font-size:.86rem;color:var(--muted);background:var(--surface-2);border-radius:12px;padding:11px 14px}
+.trade .tip b{color:var(--ink)}
+.trade .act{padding:16px 24px 22px}
+.price-note{margin-top:20px;font-size:.92rem;color:var(--muted)}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.steps::before{content:"";position:absolute;top:22px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,var(--luz),var(--agua),var(--ferro));opacity:.6}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.steps li{position:relative;display:grid;gap:10px;align-content:start}
+.steps .n{width:44px;height:44px;border-radius:50%;background:var(--surface);border:2px solid var(--line);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:1.1rem;color:var(--brand);box-shadow:var(--shadow-sm)}
+.steps b{font-size:1rem;font-family:var(--f-display);letter-spacing:-.01em}
+.steps p{color:var(--muted);font-size:.9rem}
+
+/* cards/forms */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow-sm);min-width:0}
+.step-title{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.step-title .n{width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:grid;place-items:center;font-weight:700;font-size:.95rem;flex:none}
+.step-title b{font-size:1.02rem;font-family:var(--f-display);letter-spacing:-.01em}
+.seg{display:inline-flex;gap:4px;flex-wrap:wrap;background:var(--surface-2);padding:5px;border-radius:999px}
+.seg button{font:600 .94rem var(--f-body);padding:10px 16px;border-radius:999px;border:0;background:transparent;color:var(--muted);cursor:pointer;display:inline-flex;gap:8px;align-items:center;transition:.2s}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
+.field{display:grid;gap:6px}
+.field label,.flabel{font-size:.86rem;font-weight:600;color:var(--muted)}
+select,input[type=text],input[type=number],input[type=date],textarea{font:500 1rem var(--f-body);padding:13px 14px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%;min-width:0}
+textarea{resize:vertical;min-height:84px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+.note{font-size:.87rem;color:var(--muted)}
+
+/* quote */
+.quote{display:grid;grid-template-columns:1fr 430px;gap:22px;align-items:start}
+@media (max-width:1000px){.quote{grid-template-columns:1fr}}
+.cat{display:grid;gap:10px;margin-top:18px}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;padding:15px 16px;border:1px solid var(--line);border-radius:18px;background:var(--bg);transition:.2s}
+.item.has{border-color:var(--brand);background:var(--surface);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 14%,transparent)}
+.item .nm{font-weight:600}
+.item .ds{color:var(--muted);font-size:.87rem}
+.item .pr{font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.stepper{display:flex;align-items:center;gap:4px;grid-row:1/span 3;grid-column:2}
+.stepper button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.25rem;cursor:pointer;display:grid;place-items:center;transition:.15s}
+.stepper button:hover{border-color:var(--ink)}
+.stepper button.plus{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.stepper output{min-width:28px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+
+.summary{position:sticky;top:calc(env(safe-area-inset-top,0px) + 90px);display:grid;gap:18px;background:var(--night);color:var(--on-night);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);overflow:hidden}
+.summary::before{content:"";position:absolute;right:-30%;top:-30%;width:80%;height:60%;background:radial-gradient(closest-side,rgba(226,176,74,.16),transparent);pointer-events:none}
+.summary > *{position:relative}
+@media (max-width:1000px){.summary{position:static}}
+.summary .step-title .n{background:var(--luz);color:var(--night)}
+.summary .field label,.summary .note{color:var(--muted-night)}
+.summary select,.summary input,.summary textarea{background:rgba(255,255,255,.07);border-color:var(--line-night);color:var(--on-night)}
+.summary select option{color:#17181B}
+.summary input::placeholder,.summary textarea::placeholder{color:rgba(243,246,252,.45)}
+.summary .btn-ghost{background:transparent;border-color:var(--line-night);color:var(--on-night)}
+.lines{font-size:.92rem;display:grid;gap:8px;max-height:230px;overflow:auto;font-variant-numeric:tabular-nums}
+.lines div{display:flex;justify-content:space-between;gap:10px}
+.lines div span:first-child{min-width:0;overflow-wrap:anywhere}
+.lines .mut{color:var(--muted-night)}
+.empty{color:var(--muted-night);background:var(--glass-night);border:1px dashed var(--line-night);border-radius:14px;padding:16px;font-size:.95rem}
+.tot{border-top:1px solid var(--line-night);padding-top:16px;display:grid;gap:4px}
+.tot .big{font-family:var(--f-display);font-size:1.9rem;font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.tot .sub{font-size:.88rem;color:var(--muted-night)}
+.photo-drop{border:1.5px dashed var(--line-night);border-radius:14px;padding:16px;text-align:center;font-size:.92rem;color:var(--muted-night);cursor:pointer;display:block;transition:.2s}
+.photo-drop:hover{background:var(--glass-night)}
+.photo-drop input{display:none}
+.thumbs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;justify-content:center}
+.thumbs img{width:58px;height:58px;object-fit:cover;border-radius:10px}
+
+/* avaria */
+.diag{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:860px){.diag{grid-template-columns:1fr}}
+.symptoms{display:grid;gap:8px;margin-top:16px}
+.symptoms button{text-align:left;font:500 .98rem var(--f-body);padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:center;transition:.2s}
+.symptoms button:hover{border-color:var(--muted)}
+.symptoms button[aria-pressed="true"]{border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 16%,transparent);background:var(--surface)}
+.sev{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.sev.c{background:var(--danger);color:#fff}.sev.m{background:var(--luz);color:var(--on-accent)}.sev.b{background:var(--surface-2);color:var(--ink)}
+.result{display:grid;gap:16px;align-content:start}
+.result .hint{display:grid;place-items:center;text-align:center;gap:12px;padding:30px 10px}
+.result .hint svg{width:56px;height:56px;color:var(--brand);opacity:.8}
+.safety{border-radius:16px;padding:16px 18px;background:color-mix(in srgb,var(--danger) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--danger) 30%,transparent)}
+.safety.m{background:color-mix(in srgb,var(--luz) 14%,var(--surface));border-color:color-mix(in srgb,var(--luz) 40%,transparent)}
+.safety.b{background:color-mix(in srgb,var(--ok) 10%,var(--surface));border-color:color-mix(in srgb,var(--ok) 30%,transparent)}
+.safety b{display:block;margin-bottom:3px}
+.result ul{margin:0;padding-left:20px;color:var(--muted)}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media (max-width:640px){.gallery{grid-template-columns:1fr}}
+.ba{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);min-width:0}
+.ba-view{position:relative;aspect-ratio:400/280;max-width:100%;user-select:none;touch-action:pan-y}
+.ba-view svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ba-view .after{clip-path:inset(0 0 0 var(--pos,50%))}
+.ba-view .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+.ba-view .handle::after{content:"";position:absolute;top:50%;left:50%;width:42px;height:42px;transform:translate(-50%,-50%);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A1630' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/22px no-repeat;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.ba-view input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-view .tag{position:absolute;top:12px;font-size:.75rem;font-weight:700;background:rgba(20,21,24,.75);color:#fff;padding:5px 11px;border-radius:999px;pointer-events:none;backdrop-filter:blur(6px)}
+.ba-view .tag.b{left:12px}.ba-view .tag.a{right:12px}
+.ba-body{padding:18px 20px 20px;display:grid;gap:8px}
+.ba-body .meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.88rem;color:var(--muted)}
+.ba-body b{font-size:1rem;font-family:var(--f-display);letter-spacing:-.01em}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+@media (max-width:960px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:12px;grid-template-rows:auto auto auto 1fr auto;box-shadow:var(--shadow-sm)}
+.plan.feat{background:var(--night);color:var(--on-night);border-color:transparent;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.plan.feat::before{content:"";position:absolute;inset:-40% -40% auto auto;width:90%;height:80%;background:radial-gradient(closest-side,rgba(226,176,74,.2),transparent);pointer-events:none}
+.plan.feat > *{position:relative}
+.plan .for{font-size:.9rem;color:var(--muted)}
+.plan.feat .for,.plan.feat ul{color:var(--muted-night)}
+.plan .price{font-family:var(--f-display);font-size:1.75rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.plan .price small{font-family:var(--f-body);font-size:.92rem;font-weight:500;color:var(--muted);letter-spacing:0}
+.plan.feat .price small{color:var(--muted-night)}
+.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;color:var(--muted);font-size:.9rem;align-content:start}
+.plan li{display:flex;gap:10px}
+.plan li::before{content:"";width:18px;height:18px;flex:none;margin-top:3px;border-radius:50%;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.badge{justify-self:start;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--luz);color:var(--night)}
+
+/* tools */
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:860px){.tools{grid-template-columns:1fr}}
+.tool h3{display:flex;gap:12px;align-items:center}
+.tool h3 .ic{width:42px;height:42px;border-radius:13px;display:grid;place-items:center}
+.tool h3 .ic svg{width:22px;height:22px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+.kpi{background:var(--bg);border-radius:16px;padding:14px 16px}
+.kpi span{font-size:.84rem;color:var(--muted);display:block}
+.kpi b{font-family:var(--f-display);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--brand)}
+.rangeval{display:flex;justify-content:space-between;font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.rangeval b{color:var(--ink)}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:900px){.why{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.why{grid-template-columns:1fr}}
+.why div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
+.why .ic{width:48px;height:48px;border-radius:14px;background:var(--surface-2);display:grid;place-items:center;color:var(--brand)}
+.why .ic svg{width:24px;height:24px}
+.why b{font-size:1rem;font-family:var(--f-display);letter-spacing:-.01em}
+.why p{color:var(--muted);font-size:.9rem}
+.pay{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
+.pay b{margin-right:4px}
+.pay span{font-size:.92rem;font-weight:500;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 16px}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:900px){.reviews{grid-template-columns:1fr}}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;gap:14px;align-content:start;box-shadow:var(--shadow-sm)}
+.stars{color:var(--luz);letter-spacing:3px;font-size:1.05rem}
+.review p{font-size:.95rem}
+.review footer{display:flex;align-items:center;gap:12px;font-size:.88rem;color:var(--muted)}
+.review .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:var(--night);flex:none}
+.sample-note{font-size:.88rem;color:var(--muted);border:1px dashed var(--line);border-radius:14px;padding:12px 14px;margin-top:20px}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:40px}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+.faq{display:grid;gap:10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 22px;transition:.2s}
+details[open]{box-shadow:var(--shadow-sm)}
+summary{cursor:pointer;font-weight:600;padding:19px 0;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";width:30px;height:30px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-size:1.2rem;flex:none;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding-bottom:20px;color:var(--muted)}
+
+/* cta band */
+.cta{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:-50% auto auto 50%;width:80%;height:160%;background:radial-gradient(closest-side,rgba(226,176,74,.14),transparent 70%);pointer-events:none}
+.cta::after{content:"";position:absolute;inset:auto 50% -60% auto;width:70%;height:140%;background:radial-gradient(closest-side,rgba(255,255,255,.06),transparent 70%);pointer-events:none}
+.cta .wrap{position:relative;z-index:1}
+.cta-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+@media (max-width:900px){.cta-grid{grid-template-columns:1fr}}
+.cta h2{font-size:clamp(1.5rem,2.4vw,1.95rem)}
+.cta .lead{color:var(--muted-night);font-size:1rem;margin-top:12px;max-width:46ch}
+.cta .bignum{font-family:var(--f-display);font-size:clamp(1.4rem,2.2vw,1.7rem);font-weight:800;letter-spacing:-.02em;margin-top:18px;font-variant-numeric:tabular-nums}
+.channels{display:grid;gap:10px}
+.channel{display:flex;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--line-night);border-radius:18px;background:var(--glass-night);text-decoration:none;min-width:0;transition:.2s}
+a.channel:hover{background:rgba(255,255,255,.13)}
+.channel .ci{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;flex:none;color:#fff}
+.channel .ci svg{width:24px;height:24px}
+.channel div{min-width:0}
+.channel b{display:block}
+.channel span{font-size:.9rem;color:var(--muted-night);overflow-wrap:anywhere}
+.channel .cp{margin-left:auto;flex:none}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.hours div{border:1px solid var(--line-night);border-radius:18px;padding:14px 16px}
+.hours span{display:block;font-size:.82rem;color:var(--muted-night)}
+.zones{margin-top:10px;border:1px solid var(--line-night);border-radius:18px;padding:16px 18px;display:grid;gap:10px;font-size:.95rem}
+.zones div{display:flex;gap:10px;align-items:baseline}
+.zones .dot{transform:translateY(-1px)}
+
+footer.site{background:var(--night);color:var(--muted-night);border-top:1px solid var(--line-night);padding-block:28px 110px;font-size:.88rem}
+footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;padding:13px 20px 13px 15px;border-radius:999px;box-shadow:0 16px 32px -12px rgba(24,160,74,.75);transition:transform .2s}
+.fab:hover{transform:translateY(-2px)}
+.fab svg{width:26px;height:26px}
+@media (max-width:480px){.fab span{display:none}.fab{padding:15px}}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:13px 20px;border-radius:999px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:80;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* real photos in the before/after sliders */
+.ba-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:var(--surface-2)}
+
+/* notice bar (set by the administrator) */
+.notice{background:linear-gradient(90deg,var(--gold-3),var(--gold-2));color:#141518;font-weight:600;font-size:.95rem;text-align:center;padding:10px 16px}
+
+/* ===== administrator ===== */
+.adm-btn{position:fixed;left:calc(18px + env(safe-area-inset-left,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:8px;background:#141518;color:var(--gold-1);border:1px solid rgba(226,176,74,.5);font:600 .9rem/1 var(--f-body);padding:12px 16px;border-radius:999px;cursor:pointer;box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+.adm-btn svg{width:18px;height:18px}
+.adm{position:fixed;inset:0;z-index:90;background:rgba(10,11,13,.6);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px}
+.adm[hidden],[hidden]{display:none!important}
+.adm-box{width:min(860px,100%);max-height:calc(100dvh - 32px);display:grid;grid-template-rows:auto auto 1fr auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 80px -30px rgba(0,0,0,.7);overflow:hidden}
+.adm-top{display:flex;align-items:center;gap:12px;padding:18px 22px;background:#141518;color:#F4F3F0}
+.adm-top h2{font-size:1.2rem;color:var(--gold-1);margin-right:auto}
+.adm-top small{color:#A8A7A2;font-size:.8rem}
+.adm-x{background:none;border:0;color:#F4F3F0;font-size:1.6rem;line-height:1;cursor:pointer;padding:4px 8px}
+.adm-tabs{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.adm-tabs button{flex:none;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font:600 .88rem/1 var(--f-body);padding:10px 14px;border-radius:999px;cursor:pointer}
+.adm-tabs button[aria-pressed="true"]{background:#141518;color:var(--gold-1);border-color:#141518}
+.adm-body{overflow:auto;padding:20px 22px;display:grid;gap:16px;align-content:start}
+.adm-body h3{font-size:1rem}
+.adm-help{color:var(--muted);font-size:.9rem}
+.adm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:640px){.adm-grid{grid-template-columns:1fr}}
+.adm label{display:grid;gap:6px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.adm input,.adm select,.adm textarea{font:500 .95rem var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 12px;width:100%}
+.adm textarea{min-height:84px;resize:vertical}
+.adm-price{display:grid;grid-template-columns:1fr 130px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.adm-price input{text-align:right}
+.adm-item{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--bg)}
+.adm-item div{flex:1;min-width:0;font-size:.9rem}
+.adm-item img{width:64px;height:46px;object-fit:cover;border-radius:8px;flex:none}
+.adm-del{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--danger);font:600 .85rem var(--f-body);padding:8px 12px;border-radius:999px;cursor:pointer}
+.adm-add{border:1px dashed var(--line);border-radius:16px;padding:16px;display:grid;gap:12px}
+.adm-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 22px;border-top:1px solid var(--line);background:var(--surface-2)}
+.adm-foot .adm-status{margin-right:auto;font-size:.88rem;color:var(--muted)}
+.adm-save{background:linear-gradient(180deg,var(--gold-2),var(--gold-3));color:#141518;border:0;font:700 .95rem/1 var(--f-body);padding:13px 20px;border-radius:999px;cursor:pointer}
+.adm-save:disabled{opacity:.6;cursor:wait}
+.adm-sec{background:none;border:1px solid var(--line);color:var(--ink);font:600 .9rem/1 var(--f-body);padding:12px 16px;border-radius:999px;cursor:pointer}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm5.9 15.7c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.3 14.3 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4Z"/></symbol>
+  <symbol id="i-luz" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+  <symbol id="i-agua" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5S5 10.3 5 15a7 7 0 0 0 14 0c0-4.7-7-12.5-7-12.5Z"/></symbol>
+  <symbol id="i-ferro" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 3v18M10 3v18M15 3v18M20 3v18M3 8h19M3 16h19"/></symbol>
+  <symbol id="i-tinta" viewBox="0 0 24 24"><rect x="3" y="3" width="15" height="6" rx="2" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M18 6h2.5v5H11v3"/><rect x="9" y="14" width="4" height="8" rx="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 12V4h8l10 10-8 8L3 12Z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 2h9l5 5v15H6V2Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14 2v6h6M9 13h8M9 17h6"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2 8c3-3 5 3 8 0s5 3 8 0 3-1 4 0M2 14c3-3 5 3 8 0s5 3 8 0 3-1 4 0M2 20c3-3 5 3 8 0s5 3 8 0 3-1 4 0"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7ZM12 17v5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m20 20-4-4"/></symbol>
+</svg>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="top" id="topHeader">
+  <span class="glow" aria-hidden="true"></span>
+  <div class="wrap bar">
+    <a class="logo" href="#inicio" aria-label="Tozé Serviços, início">
+      <span class="logo-wrap" aria-hidden="true">
+        <svg class="tz" viewBox="0 -1 118 50">
+          <defs><linearGradient id="tzGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE6A2"/><stop offset=".55" stop-color="#E2B04A"/><stop offset="1" stop-color="#B9842A"/></linearGradient>
+            <linearGradient id="tzShineG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+            <mask id="tzMask" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-40" y="-10" width="200" height="70"><use href="#tzT"/><use href="#tzO"/><use href="#tzZ"/><use href="#tzE"/></mask>
+          </defs>
+          <!-- T: rolo de pintura (pintura) -->
+          <g class="tz-l tz-t" id="tzT" fill="url(#tzGold)">
+            <g class="tz-roll"><rect x="0" y="7" width="28" height="10" rx="5"/>
+              <path d="M5.5 8.5 V15.5 M10 8.5 V15.5 M14.5 8.5 V15.5 M19 8.5 V15.5 M23.5 8.5 V15.5" stroke="#141518" stroke-opacity=".35" stroke-width="1.2" stroke-linecap="round"/></g>
+            <rect x="12" y="17" width="4" height="4" rx="1"/><rect x="10.5" y="20.5" width="7" height="18.5" rx="3.2"/>
+            <g class="tz-drip"><rect x="3.2" y="16" width="2.8" height="4" rx="1.4"/><circle cx="4.6" cy="21.2" r="1.9"/></g>
+          </g>
+          <!-- O: gota de água (canalização) -->
+          <path class="tz-l tz-o" id="tzO" fill="url(#tzGold)" fill-rule="evenodd" d="M43 6 C43 6 31.5 19 31.5 27.5 A11.5 11.5 0 0 0 54.5 27.5 C54.5 19 43 6 43 6Z M43 23 a5 5 0 1 0 0.01 0Z"/>
+          <!-- Z: raio (eletricidade) -->
+          <path class="tz-l tz-z" id="tzZ" fill="url(#tzGold)" d="M60 9 H84 V14 L73 23 H80 L66 34 H84 V39 H60 V34 L69 27 H62 L76 14 H60Z"/>
+          <!-- É: barras de ferro rebitadas, como uma grade (serralharia) -->
+          <g class="tz-l tz-e" id="tzE" fill="url(#tzGold)"><rect x="91" y="9" width="6" height="30" rx="1"/><rect x="91" y="9" width="25" height="6" rx="1"/><rect x="91" y="21" width="20" height="6" rx="1"/><rect x="91" y="33" width="25" height="6" rx="1"/>
+            <g fill="#141518" fill-opacity=".9"><circle cx="94" cy="12" r="1.7"/><circle cx="94" cy="24" r="1.7"/><circle cx="94" cy="36" r="1.7"/><circle cx="112.5" cy="12" r="1.7"/><circle cx="107.5" cy="24" r="1.7"/><circle cx="112.5" cy="36" r="1.7"/></g>
+            <path d="M100 6 L109 0.5" stroke="url(#tzGold)" stroke-width="3.6" stroke-linecap="square"/></g>
+          <!-- brilho que passa por cima das letras -->
+          <g mask="url(#tzMask)"><path class="tz-shine" d="M-22 -1 H-8 L-24 49 H-38Z" fill="url(#tzShineG)"/></g>
+        </svg>
+        <i class="spark" style="--dx:-18px;--dy:-16px"></i><i class="spark" style="--dx:18px;--dy:-18px"></i><i class="spark" style="--dx:20px;--dy:12px"></i><i class="spark" style="--dx:-20px;--dy:14px"></i>
+      </span>
+      <small class="logo-sub"><span>SERVIÇOS</span><span>SANTIAGO</span><span class="tr" aria-hidden="true"><i></i><i></i><i></i><i></i></span></small>
+    </a>
+    <nav class="main" aria-label="Menu">
+      <a href="#servicos">Serviços</a>
+      <a href="#como">Como funciona</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#avaria">Tenho uma avaria</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#planos">Planos</a>
+      <a href="#contactos">Contactos</a>
+    </nav>
+    <a class="urg" id="urgTop" href="#" target="_blank" rel="noopener"><i></i>Urgência 24h</a>
+  </div>
+</header>
+
+<main id="inicio">
+<div class="notice" id="notice" role="status" hidden></div>
+<!-- ============ INÍCIO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill-top"><b>TXOMA TOZÉ!</b>Da Praia ao Tarrafal</span>
+      <h1>Serviços técnicos para a sua casa, com garantia</h1>
+      <p class="lead">Uma só equipa de profissionais para casas, lojas e empresas em toda a ilha de Santiago.</p>
+      <ul class="roles" aria-label="Os nossos profissionais">
+        <li class="luz"><span class="ic"><svg><use href="#i-luz"/></svg></span><div><b>Eletricista</b><span>Quadros, tomadas, solar</span></div></li>
+        <li class="agua"><span class="ic"><svg><use href="#i-agua"/></svg></span><div><b>Canalizador</b><span>Fugas, bombas, cisternas</span></div></li>
+        <li class="ferro"><span class="ic"><svg><use href="#i-ferro"/></svg></span><div><b>Serralheiro</b><span>Portões, grades, varandas</span></div></li>
+        <li class="tinta"><span class="ic"><svg><use href="#i-tinta"/></svg></span><div><b>Pintor</b><span>Interiores, fachadas, terraços</span></div></li>
+      </ul>
+      <div class="hero-ctas">
+        <a class="btn btn-wa" id="heroWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+        <a class="btn btn-glass" href="#orcamento">Calcular orçamento</a>
+      </div>
+    </div>
+
+    <div class="scene">
+      <svg viewBox="0 0 600 520" role="img" aria-label="Ilustração de uma casa em Santiago à noite, com eletricidade, água e ferro">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2D32"/><stop offset="1" stop-color="#383B42"/></linearGradient>
+          <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A441"/></linearGradient>
+          <radialGradient id="halo"><stop offset="0" stop-color="#D9A441" stop-opacity=".55"/><stop offset="1" stop-color="#D9A441" stop-opacity="0"/></radialGradient>
+          <radialGradient id="moon"><stop offset="0" stop-color="#FFF6DA"/><stop offset="1" stop-color="#FFE7A3"/></radialGradient>
+        </defs>
+        <rect width="600" height="520" rx="28" fill="url(#sky)"/>
+        <g fill="#fff" opacity=".7"><circle cx="60" cy="50" r="1.5"/><circle cx="140" cy="90" r="1"/><circle cx="220" cy="40" r="1.4"/><circle cx="320" cy="70" r="1"/><circle cx="380" cy="30" r="1.6"/><circle cx="520" cy="100" r="1.2"/><circle cx="560" cy="40" r="1"/><circle cx="270" cy="120" r="1"/><circle cx="100" cy="150" r="1.2"/></g>
+        <circle cx="480" cy="80" r="70" fill="url(#halo)" opacity=".5"/>
+        <circle cx="480" cy="80" r="26" fill="url(#moon)"/>
+        <!-- montanhas: Pico da Antónia -->
+        <path d="M0 330 L70 250 L130 280 L230 150 L300 230 L360 200 L450 270 L600 220 L600 400 L0 400Z" fill="#26292E"/>
+        <path d="M0 360 L90 300 L170 330 L260 280 L360 320 L470 290 L600 330 L600 420 L0 420Z" fill="#30333A"/>
+        <!-- chão -->
+        <path d="M0 420 H600 V492 a28 28 0 0 1 -28 28 H28 a28 28 0 0 1 -28 -28Z" fill="#1A1B1E"/>
+        <!-- poste Electra e fio -->
+        <rect x="46" y="250" width="7" height="170" rx="2" fill="#4A4D54"/>
+        <rect x="30" y="256" width="40" height="6" rx="2" fill="#4A4D54"/>
+        <path d="M66 262 Q150 300 214 258" stroke="#D9A441" stroke-width="3" class="flow"/>
+        <!-- casa -->
+        <rect x="200" y="230" width="300" height="190" rx="6" fill="#ECEAE5"/>
+        <rect x="200" y="230" width="140" height="190" fill="#DAD6CE"/>
+        <rect x="186" y="220" width="328" height="16" rx="4" fill="#C4BFB5"/>
+        <line x1="200" y1="325" x2="500" y2="325" stroke="#CEC9BF" stroke-width="3"/>
+        <!-- painéis solares -->
+        <g>
+          <path d="M210 216 L232 180 L300 180 L278 216Z" fill="#2B2E35"/>
+          <path d="M290 216 L312 180 L376 180 L354 216Z" fill="#2B2E35"/>
+          <path d="M221 198 H289 M301 198 H365 M255 180 L244 216 M333 180 L322 216" stroke="#6B7079" stroke-width="1.6"/>
+          <path d="M232 180 L300 180 L290 196Z" fill="#fff" opacity=".12"/>
+        </g>
+        <!-- caixa d'água -->
+        <rect x="410" y="176" width="58" height="44" rx="8" fill="#4E9AA6"/>
+        <ellipse cx="439" cy="177" rx="29" ry="7" fill="#86BCC4"/>
+        <!-- cano da cisterna à caixa -->
+        <path d="M526 470 V200 H470" stroke="#4E9AA6" stroke-width="6" stroke-linecap="round" fill="none" opacity=".35"/>
+        <path d="M526 470 V200 H470" stroke="#A9D3D9" stroke-width="3" class="flow" style="animation-duration:2.2s"/>
+        <rect x="470" y="452" width="80" height="30" rx="8" fill="#2F5F67"/>
+        <!-- janelas iluminadas -->
+        <circle cx="270" cy="275" r="60" fill="url(#halo)" class="glow"/>
+        <rect x="226" y="252" width="88" height="54" rx="4" fill="url(#win)"/>
+        <path d="M241 252V306M256 252V306M271 252V306M286 252V306M301 252V306" stroke="#C2704E" stroke-width="3"/>
+        <rect x="370" y="252" width="100" height="54" rx="4" fill="url(#win)" opacity=".92"/>
+        <line x1="420" y1="252" x2="420" y2="306" stroke="#CEC9BF" stroke-width="3"/>
+        <rect x="226" y="350" width="88" height="46" rx="4" fill="url(#win)" opacity=".85"/>
+        <path d="M241 350V396M256 350V396M271 350V396M286 350V396M301 350V396" stroke="#C2704E" stroke-width="3"/>
+        <!-- porta -->
+        <rect x="390" y="345" width="56" height="75" rx="4" fill="#2A2D32"/>
+        <circle cx="436" cy="384" r="3" fill="#D9A441"/>
+        <!-- varanda -->
+        <rect x="360" y="318" width="140" height="7" rx="2" fill="#C4BFB5"/>
+        <path d="M362 292 H498 M372 292V318 M392 292V318 M412 292V318 M432 292V318 M452 292V318 M472 292V318 M492 292V318" stroke="#C2704E" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- muro e portão -->
+        <rect x="80" y="372" width="120" height="48" rx="3" fill="#D6D2CA"/>
+        <rect x="96" y="356" width="88" height="64" rx="3" fill="none" stroke="#C2704E" stroke-width="4"/>
+        <path d="M110 356V420M124 356V420M138 356V420M152 356V420M166 356V420" stroke="#C2704E" stroke-width="3"/>
+        <path d="M96 388 H184" stroke="#C2704E" stroke-width="3"/>
+        <!-- planta -->
+        <path d="M560 420 q-8 -40 4 -64 q6 30 -4 64Z M548 420 q-20 -30 -16 -52 q14 20 16 52Z" fill="#1E8C6A"/>
+      </svg>
+      <div class="float f1"><span class="ic" style="background:var(--ok);color:#fff"><svg><use href="#i-shield"/></svg></span><div><b>12 meses de garantia</b><span>Em toda a mão de obra</span></div></div>
+      <div class="float f3"><span class="ic" style="background:var(--luz);color:var(--night)"><svg><use href="#i-clock"/></svg></span><div><b>Urgências 24 horas</b><span>Todos os dias</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trustbar">
+  <div class="wrap">
+    <div><svg><use href="#i-tag"/></svg>Preço fechado antes de começar</div>
+    <div><svg><use href="#i-shield"/></svg>Garantia de 12 meses</div>
+    <div><svg><use href="#i-doc"/></svg>Fatura com NIF</div>
+    <div><svg><use href="#i-clock"/></svg>Resposta no mesmo dia</div>
+  </div>
+</div>
+
+<!-- ============ SERVIÇOS ============ -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Os nossos serviços</span><h2>Tudo o que a sua casa precisa, numa só equipa</h2></div>
+      <p class="lead">Escolha a área para ver o que fazemos e o preço a partir do qual começa cada serviço.</p>
+    </div>
+    <div class="trades" id="trades"></div>
+    <p class="price-note">Preços de referência com material standard, sem IVA. O preço final é sempre confirmado consigo antes de começarmos.</p>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section id="como" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Passo a passo</span><h2>Como funciona</h2></div>
+      <p class="lead">Quatro passos simples, do primeiro contacto até ao trabalho terminado.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">1</span><b>Fale connosco</b><p>Mande mensagem no WhatsApp ou use o orçamento abaixo. Se puder, envie uma foto do problema.</p></li>
+      <li><span class="n">2</span><b>Receba o preço</b><p>Dizemos o preço fechado no mesmo dia. Só avançamos com a sua aprovação.</p></li>
+      <li><span class="n">3</span><b>O técnico vai a sua casa</b><p>No dia e hora que escolheu. Recebe antes o nome do técnico.</p></li>
+      <li><span class="n">4</span><b>Paga no fim</b><p>Recebe fatura, fotos do trabalho feito e 12 meses de garantia.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ORÇAMENTO ============ -->
+<section id="orcamento">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Orçamento grátis</span><h2>Calcule o seu orçamento em 1 minuto</h2></div>
+      <p class="lead">Escolha o que precisa, preencha os seus dados e envie pelo WhatsApp. É grátis e sem compromisso.</p>
+    </div>
+    <div class="quote">
+      <div class="card">
+        <div class="step-title"><span class="n">1</span><b>Escolha os serviços</b></div>
+        <p class="note">Escolha a área e toque em <b>+</b> nos serviços que precisa.</p>
+        <div class="seg" id="catTabs" style="margin-top:14px"></div>
+        <div class="cat" id="catalog"></div>
+      </div>
+      <form class="summary" id="quoteForm" novalidate>
+        <div>
+          <div class="step-title" style="margin-bottom:12px"><span class="n">2</span><b>O seu orçamento</b></div>
+          <div class="lines" id="qLines"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="qIsland">Concelho</label><select id="qIsland"></select></div>
+          <div class="field"><label for="qUrg">Quando precisa?</label>
+            <select id="qUrg"><option value="1">Normal (até 5 dias)</option><option value="1.15">Em 48 horas (+15%)</option><option value="1.4">Urgente, 24h (+40%)</option></select></div>
+        </div>
+        <div class="field"><label for="qTier">Qualidade do material</label>
+          <select id="qTier"><option value="0.85">Económico</option><option value="1" selected>Standard (recomendado)</option><option value="1.35">Premium (inox, resistente à maresia)</option></select></div>
+        <div class="tot">
+          <span class="sub">Valor estimado, com IVA</span>
+          <span class="big" id="qTotal">—</span>
+          <span class="sub" id="qEur"></span>
+        </div>
+        <div>
+          <div class="step-title"><span class="n">3</span><b>Os seus dados</b></div>
+          <div style="display:grid;gap:10px">
+            <div class="row2">
+              <div class="field"><label for="qName">Nome</label><input type="text" id="qName" placeholder="O seu nome"></div>
+              <div class="field"><label for="qZone">Bairro</label><input type="text" id="qZone" placeholder="Ex.: Palmarejo"></div>
+            </div>
+            <div class="row2">
+              <div class="field"><label for="qDate">Dia que prefere</label><input type="date" id="qDate"></div>
+              <div class="field"><label for="qPeriod">Hora</label><select id="qPeriod"><option>Manhã (8h–12h)</option><option>Tarde (13h–17h)</option><option>Fim de tarde (17h–19h)</option></select></div>
+            </div>
+            <div class="field"><label for="qDesc">Explique o problema (opcional)</label><textarea id="qDesc" placeholder="Ex.: O disjuntor desliga quando ligo o ar condicionado."></textarea></div>
+            <label class="photo-drop" for="qPhoto">Escolher fotos do problema (opcional)<input type="file" id="qPhoto" accept="image/*" multiple><div class="thumbs" id="thumbs"></div></label>
+          </div>
+        </div>
+        <a class="btn btn-wa" id="sendWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enviar pedido pelo WhatsApp</a>
+        <button class="btn btn-ghost btn-sm" type="button" id="copyQuote">Copiar o pedido</button>
+        <p class="note">Este valor é uma estimativa. O preço final é confirmado consigo depois de vermos fotos ou o local. As fotos não seguem sozinhas: anexe-as na conversa do WhatsApp.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVARIA ============ -->
+<section id="avaria" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Ajuda rápida</span><h2>Tem uma avaria agora?</h2></div>
+      <p class="lead">Escolha a área e o problema. Dizemos se é urgente e o que deve fazer já, enquanto o técnico não chega.</p>
+    </div>
+    <div class="diag">
+      <div class="card" style="background:var(--bg);box-shadow:none">
+        <div class="step-title"><span class="n">1</span><b>Onde é o problema?</b></div>
+        <div class="seg" id="diagArea"></div>
+        <div class="step-title" style="margin-top:24px;margin-bottom:0"><span class="n">2</span><b>O que está a acontecer?</b></div>
+        <div class="symptoms" id="diagSym"></div>
+      </div>
+      <div class="card result" id="diagResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRABALHOS ============ -->
+<section id="trabalhos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Antes e depois</span><h2>Trabalhos feitos</h2></div>
+      <p class="lead">Arraste o círculo branco no meio de cada imagem para ver a diferença.</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- ============ PLANOS ============ -->
+<section id="planos" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Manutenção</span><h2>Planos mensais</h2></div>
+      <p class="lead">Para quem quer a casa sempre em ordem, ou para quem vive fora e precisa de alguém de confiança em Santiago.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Casa Segura</h3>
+        <p class="for">Para famílias que vivem em Santiago.</p>
+        <div class="price">1.900$00 <small>/ mês</small></div>
+        <ul><li>2 revisões por ano: eletricidade, água e bomba</li><li>15% de desconto em reparações</li><li>Atendimento prioritário em 24 horas</li></ul>
+        <a class="btn btn-ghost plan-wa" data-plan="Casa Segura" href="#" target="_blank" rel="noopener">Quero este plano</a>
+      </div>
+      <div class="plan feat">
+        <span class="badge">Mais pedido</span>
+        <h3>Diáspora</h3>
+        <p class="for">Para quem vive fora e tem casa em Santiago.</p>
+        <div class="price">3.500$00 <small>/ mês · ≈ 32 €</small></div>
+        <ul><li>Visita mensal à casa, com fotos no WhatsApp</li><li>Verificamos cisterna, bomba, quadro e ferrugem</li><li>Acompanhamos obras por si</li><li>Pode pagar em euros ou dólares</li></ul>
+        <a class="btn btn-wa plan-wa" data-plan="Diáspora" href="#" target="_blank" rel="noopener">Quero este plano</a>
+      </div>
+      <div class="plan">
+        <h3>Empresas</h3>
+        <p class="for">Para hotéis, lojas, restaurantes e condomínios.</p>
+        <div class="price">Sob proposta</div>
+        <ul><li>Técnico dedicado e resposta em 4 horas na Praia</li><li>Relatório mensal das intervenções</li><li>Faturação mensal com NIF</li></ul>
+        <a class="btn btn-ghost plan-wa" data-plan="Empresas" href="#" target="_blank" rel="noopener">Pedir proposta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULADORAS ============ -->
+<section id="calculadoras">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Ferramentas grátis</span><h2>Solar e água: faça as contas</h2></div>
+      <p class="lead">Veja quanto pode poupar com painéis solares e que tamanho de cisterna a sua família precisa.</p>
+    </div>
+    <div class="tools">
+      <div class="card tool">
+        <h3><span class="ic" style="background:var(--luz-soft);color:var(--luz)"><svg><use href="#i-sun"/></svg></span>Painéis solares</h3>
+        <div style="display:grid;gap:16px;margin-top:20px">
+          <div class="field"><label for="sBill">Quanto paga de luz por mês?</label>
+            <input type="range" id="sBill" min="2000" max="60000" step="500" value="12000">
+            <div class="rangeval"><span>2.000$00</span><b id="sBillV"></b><span>60.000$00</span></div></div>
+          <div class="row2">
+            <div class="field"><label for="sPrice">Preço do kWh na fatura</label><input type="number" id="sPrice" value="30" min="10" max="80" step="0.5"></div>
+            <div class="field"><label for="sCover">Quanto quer cobrir?</label><select id="sCover"><option value="0.5">50% da fatura</option><option value="0.7" selected>70% da fatura</option><option value="0.9">90%, com bateria</option></select></div>
+          </div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><span>Sistema recomendado</span><b id="sKwp">—</b></div>
+          <div class="kpi"><span>Custo aproximado</span><b id="sCost">—</b></div>
+          <div class="kpi"><span>Poupa por mês</span><b id="sSave">—</b></div>
+          <div class="kpi"><span>Paga-se em</span><b id="sPay">—</b></div>
+        </div>
+        <button class="btn btn-ghost btn-sm" type="button" id="solarToQuote" style="margin-top:16px">Juntar ao orçamento</button>
+      </div>
+      <div class="card tool">
+        <h3><span class="ic" style="background:var(--agua-soft);color:var(--agua)"><svg><use href="#i-agua"/></svg></span>Cisterna</h3>
+        <div style="display:grid;gap:16px;margin-top:20px">
+          <div class="field"><label for="wPeople">Quantas pessoas vivem em casa?</label>
+            <input type="range" id="wPeople" min="1" max="14" value="5"><div class="rangeval"><span>1</span><b id="wPeopleV"></b><span>14</span></div></div>
+          <div class="field"><label for="wDays">Quantos dias quer ter água sem a rede?</label>
+            <input type="range" id="wDays" min="3" max="30" value="10"><div class="rangeval"><span>3</span><b id="wDaysV"></b><span>30</span></div></div>
+          <div class="field"><label for="wUse">Gasto de água</label><select id="wUse"><option value="50">Pouco (50 litros por pessoa/dia)</option><option value="80" selected>Normal (80 litros por pessoa/dia)</option><option value="120">Com jardim (120 litros por pessoa/dia)</option></select></div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><span>Cisterna recomendada</span><b id="wVol">—</b></div>
+          <div class="kpi"><span>Bomba (autoclave)</span><b id="wPump">—</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORQUÊ NÓS ============ -->
+<section style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Confiança</span><h2>Porquê o Tozé</h2></div>
+      <p class="lead">Trabalho bem feito, preço claro e materiais pensados para o clima de Santiago.</p>
+    </div>
+    <div class="why">
+      <div><span class="ic"><svg><use href="#i-tag"/></svg></span><b>Preço fechado</b><p>O preço que aprova no WhatsApp é o preço que paga.</p></div>
+      <div><span class="ic"><svg><use href="#i-shield"/></svg></span><b>12 meses de garantia</b><p>Em toda a mão de obra, por escrito.</p></div>
+      <div><span class="ic"><svg><use href="#i-wave"/></svg></span><b>Feito para a maresia</b><p>Ferro galvanizado e inox que não enferrujam junto ao mar.</p></div>
+      <div><span class="ic"><svg><use href="#i-plug"/></svg></span><b>Tratamos da Electra</b><p>Pedidos de baixada, aumento de potência e contadores.</p></div>
+    </div>
+    <div class="pay"><b>Formas de pagamento:</b><span>Vinti4</span><span>Transferência bancária</span><span>Dinheiro</span><span>Euros / dólares</span><span>Prestações acima de 100.000$00</span></div>
+  </div>
+</section>
+
+<!-- ============ OPINIÕES ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Opiniões</span><h2>O que dizem os clientes</h2></div>
+    </div>
+    <div class="reviews" id="reviews">
+      <article class="review"><div class="stars">★★★★★</div><p>"Ficámos sem luz numa sexta à noite. Mandei foto do quadro pelo WhatsApp e às 21h já estava resolvido."</p><footer><span class="av" style="background:var(--luz)">P</span><span>Cliente · Palmarejo, Praia<br>Eletricidade</span></footer></article>
+      <article class="review"><div class="stars">★★★★★</div><p>"O portão já não enferruja como antes. Mandaram fotos de cada fase do trabalho."</p><footer><span class="av" style="background:var(--ferro)">T</span><span>Cliente · Tarrafal<br>Serralharia</span></footer></article>
+      <article class="review"><div class="stars">★★★★★</div><p>"Moro em Roterdão. Trataram da cisterna e da bomba da casa da minha mãe sem eu ter de ir lá."</p><footer><span class="av" style="background:var(--agua)">A</span><span>Cliente · Assomada<br>Canalização</span></footer></article>
+    </div>
+    <p class="sample-note" id="reviewsNote">Estas três opiniões são exemplos. Substitua-as por opiniões reais de clientes antes de publicar o site.</p>
+  </div>
+</section>
+
+<!-- ============ PERGUNTAS ============ -->
+<section style="background:var(--surface);border-top:1px solid var(--line)">
+  <div class="wrap faq-grid">
+    <div><span class="label">Dúvidas</span><h2>Perguntas frequentes</h2><p class="note" style="font-size:1rem;margin-top:10px">Não encontra a resposta? Mande-nos mensagem no WhatsApp.</p></div>
+    <div class="faq">
+      <details open><summary>Em que zonas trabalham?</summary><p>Em toda a ilha de Santiago. Na Praia, Cidade Velha e São Domingos vamos todos os dias. Em Assomada, Tarrafal, Santa Cruz e nos outros concelhos do interior vamos por marcação. Para já não trabalhamos noutras ilhas.</p></details>
+      <details><summary>O orçamento é grátis?</summary><p>Sim. O orçamento pelo WhatsApp é grátis. Se for preciso visitar o local, a visita custa 3.500$00 na Praia e esse valor é descontado se fizer a reparação connosco.</p></details>
+      <details><summary>O valor do site é o preço final?</summary><p>Não, é uma estimativa. Depois de ver fotos ou o local, dizemos o preço fechado. Esse é o preço que paga.</p></details>
+      <details><summary>Quando pago?</summary><p>No fim do trabalho. Em obras acima de 100.000$00 pode pagar em prestações.</p></details>
+      <details><summary>Os painéis solares funcionam quando a Electra corta a luz?</summary><p>Só se tiverem bateria. Sem bateria, o sistema desliga-se por segurança quando a rede cai.</p></details>
+      <details><summary>Passam fatura?</summary><p>Sim, sempre com NIF e IVA, para particulares e empresas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTOS ============ -->
+<section id="contactos" class="cta">
+  <div class="wrap cta-grid">
+    <div>
+      <span class="label" style="color:var(--muted-night)">Contactos</span>
+      <h2>Avaria em casa? Txoma Tozé!</h2>
+      <p class="lead">Respondemos no mesmo dia. Para urgências, a qualquer hora.</p>
+      <div class="bignum" data-cfg="phone"></div>
+      <div class="hero-ctas">
+        <a class="btn btn-wa" id="ctaWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+        <a class="btn btn-glass" id="ctaUrg" href="#" target="_blank" rel="noopener">Tenho uma urgência</a>
+      </div>
+    </div>
+    <div class="channels">
+      <div class="channel"><span class="ci" style="background:var(--gold-2);color:#141518"><svg><use href="#i-phone"/></svg></span><div><b id="phoneTitle">Telefone e e-mail</b><span data-cfg="phone"></span><span id="emailWrap"> · <span data-cfg="email"></span></span></div><button class="btn btn-glass btn-sm cp" type="button" id="copyPhone">Copiar</button></div>
+      <a class="channel" id="cFb" href="#" target="_blank" rel="noopener"><span class="ci" style="background:#1877F2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2h-2.6C11.3 2 10.5 3.9 10.5 6.2V8H8v3h2.5v11H14V11h2.6l.4-3Z"/></svg></span><div><b>Facebook</b><span data-cfg="fbName"></span></div></a>
+      <a class="channel" id="cIg" href="#" target="_blank" rel="noopener"><span class="ci" style="background:#C13584"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><div><b>Instagram</b><span data-cfg="igName"></span></div></a>
+      <div class="hours">
+        <div><span>Segunda a sexta</span><b id="hWeek">08:00 – 19:00</b></div>
+        <div><span>Sábado</span><b id="hSat">08:00 – 13:00</b></div>
+      </div>
+      <div class="zones">
+        <div><span class="dot" style="background:var(--ok)"></span><span><b>Todos os dias:</b> Praia, Cidade Velha, São Domingos</span></div>
+        <div><span class="dot luz"></span><span><b>Por marcação:</b> Assomada, Tarrafal, Santa Cruz e restante interior</span></div>
+      </div>
+      <a class="btn btn-glass btn-sm" id="fbShare" href="#" target="_blank" rel="noopener" style="justify-self:start">Partilhar no Facebook</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap"><span>© 2026 Tozé Serviços · Eletricidade, canalização, serralharia e pintura · Santiago, Cabo Verde</span><span>Preços em escudos (1 € = 110,265$00).</span><a href="#admin" id="admLink" style="color:var(--gold-2);text-decoration:none;font-weight:600">Área do administrador</a></div></footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+<div class="toast" id="toast" role="status"></div>
+
+<!-- Administrator: the owner unlocks the panel with a GitHub key -->
+<button class="adm-btn" id="admOpen" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>Administrador</button>
+<div class="adm" id="adm" hidden role="dialog" aria-modal="true" aria-labelledby="admTitle">
+  <div class="adm-box">
+    <div class="adm-top"><h2 id="admTitle">Painel do administrador</h2><small>Só você vê isto</small><button class="adm-x" id="admClose" type="button" aria-label="Fechar">×</button></div>
+    <div class="adm-tabs" id="admTabs"></div>
+    <div class="adm-body" id="admBody"></div>
+    <div class="adm-foot"><span class="adm-status" id="admStatus">As alterações só aparecem no site depois de carregar em "Guardar e publicar".</span><button class="adm-sec" id="admOut" type="button">Sair</button><button class="adm-save" id="admSave" type="button">Guardar e publicar</button></div>
+  </div>
+</div>
+
+<!-- Site data, edited from the administrator panel. -->
+<script type="application/json" id="siteData">{"v":1,"contact":{"whatsapp":"2389721203","phone":"+238 972 12 03","email":"","facebook":"","fbName":"","instagram":"","igName":""},"hours":{"week":"08:00 – 19:00","sat":"08:00 – 13:00"},"notice":"","prices":{},"reviews":[],"jobs":[]}</script>
+
+<script>
+/* ===== GITHUB: onde o site está guardado =====
+   No GitHub Pages (utilizador.github.io/repositorio) isto é detetado sozinho. */
+window.GH = (()=>{
+  const h = location.hostname, seg = location.pathname.split("/").filter(Boolean);
+  const m = h.match(/^([a-z0-9-]+)\.github\.io$/i);
+  return { owner: m ? m[1] : "", repo: m ? (seg[0] && !/\.html?$/.test(seg[0]) ? seg[0] : h) : "", branch: "main", api: "https://api.github.com" };
+})();
+/* load the latest data saved by the administrator (data.json), then start the site (max 4 s; falls back to the data in this file) */
+(()=>{
+  const go = () => { const s = document.createElement("script"); s.textContent = document.getElementById("mainCode").textContent; document.body.appendChild(s); };
+  const run = () => { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go(); };
+  const ctl = new AbortController(), timer = setTimeout(()=>ctl.abort(), 4000);
+  fetch("data.json?t="+Date.now(), {signal:ctl.signal, cache:"no-store"})
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { if (d && typeof d==="object" && Object.keys(d).length) window.__SITE = d; })
+    .catch(()=>{})
+    .finally(()=>{ clearTimeout(timer); run(); });
+})();
+</script>
+<script type="text/plain" id="mainCode">
+/* ===== CONFIGURAÇÃO: troque pelos seus dados reais ===== */
+const CONFIG = {
+  whatsapp: "2389721203",          // indicativo 238 + número, sem espaços nem "+"
+  phone: "+238 972 12 03",
+  // Campos vazios ficam escondidos no site. Preencha quando tiver, por exemplo:
+  // facebook: "https://www.facebook.com/djuntamon.cv", fbName: "facebook.com/djuntamon.cv"
+  email: "",
+  facebook: "",
+  fbName: "",
+  instagram: "",
+  igName: "",
+  site: "",
+  eur: 110.265, iva: 0.15
+};
+/* data saved from the administrator panel overrides the defaults above */
+const SITE = window.__SITE || (()=>{try{return JSON.parse(document.getElementById("siteData").textContent)||{}}catch(e){return {}}})();
+SITE.contact=SITE.contact||{}; SITE.hours=SITE.hours||{}; SITE.prices=SITE.prices||{}; SITE.reviews=SITE.reviews||[]; SITE.jobs=SITE.jobs||[];
+Object.entries(SITE.contact).forEach(([k,v])=>{ if(typeof v==="string") CONFIG[k]=v; });
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const blobUrl = id => /^[a-z0-9-]{8,80}\.jpg$/.test(id||"") ? "fotos/"+id : "";
+
+const $ = s => document.querySelector(s);
+const fmt = n => { const v = Math.round(n/50)*50; return (v > 0 ? String(v).replace(/\B(?=(\d{3})+(?!\d))/g,".") : "0")+"$00"; };
+const eur = n => (n/CONFIG.eur).toLocaleString("pt-PT",{maximumFractionDigits:0})+" €";
+const wa = t => "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(t);
+const TRADE = {luz:"Eletricidade",agua:"Canalização",ferro:"Serralharia",tinta:"Pintura"};
+const AREAS = ["luz","agua","ferro","tinta"];
+const icon = (id, cls="") => `<svg class="${cls}"><use href="#i-${id}"/></svg>`;
+const toast = m => {const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("show"),2400)};
+async function copy(text){try{await navigator.clipboard.writeText(text);toast("Copiado")}catch(e){const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");toast("Copiado")}catch(_){toast("Selecione e copie o texto manualmente")}ta.remove()}}
+
+/* ===== SERVIÇOS (preços de referência em CVE, mão de obra + material standard) ===== */
+const SERVICES = [
+  {id:"diag",t:"luz",n:"Visita para ver a avaria",u:"visita",p:3500,d:"Descontada se fizer a reparação"},
+  {id:"tomada",t:"luz",n:"Tomada ou interruptor",u:"un",p:2500,d:"Trocar ou pôr nova"},
+  {id:"luzpt",t:"luz",n:"Ponto de luz ou candeeiro",u:"un",p:3000,d:"Com lâmpada LED"},
+  {id:"quadro",t:"luz",n:"Quadro elétrico novo",u:"un",p:35000,d:"Com disjuntores, diferencial e terra"},
+  {id:"divisao",t:"luz",n:"Instalação elétrica de uma divisão",u:"divisão",p:18000,d:"Fios, tubos e caixas novos"},
+  {id:"ac",t:"luz",n:"Instalar ar condicionado",u:"un",p:12000,d:"Com linha própria e suporte"},
+  {id:"solar",t:"luz",n:"Painéis solares",u:"kWp",p:210000,d:"Painéis, inversor e estrutura"},
+  {id:"baixada",t:"luz",n:"Pedido de baixada à Electra",u:"processo",p:15000,d:"Papéis, caixa e ligação ao contador"},
+  {id:"desent",t:"agua",n:"Desentupir",u:"serviço",p:4500,d:"Lava-loiça, sanita ou esgoto"},
+  {id:"fuga",t:"agua",n:"Reparar fuga de água",u:"serviço",p:4000,d:"Encontrar e reparar"},
+  {id:"torneira",t:"agua",n:"Montar torneira",u:"un",p:3000,d:"Só mão de obra"},
+  {id:"autoclave",t:"agua",n:"Bomba de água (autoclave)",u:"un",p:38000,d:"Bomba com instalação"},
+  {id:"cisterna",t:"agua",n:"Limpar cisterna",u:"cisterna",p:8000,d:"Até 10 m³, com desinfeção"},
+  {id:"esquent",t:"agua",n:"Esquentador ou termoacumulador",u:"un",p:9000,d:"Instalação e ligação"},
+  {id:"wc",t:"agua",n:"Canalização de casa de banho",u:"divisão",p:65000,d:"Água fria, quente e esgoto"},
+  {id:"caixa",t:"agua",n:"Caixa d'água no terraço",u:"un",p:22000,d:"Depósito de 1000 litros"},
+  {id:"portao",t:"ferro",n:"Portão de ferro",u:"m²",p:14000,d:"Galvanizado e pintado"},
+  {id:"grade",t:"ferro",n:"Grade de janela",u:"m²",p:7500,d:"Bem fixa, sem rachar a parede"},
+  {id:"corrimao",t:"ferro",n:"Corrimão ou guarda de varanda",u:"metro",p:6500,d:"Altura de segurança 1,10 m"},
+  {id:"porta",t:"ferro",n:"Porta de segurança",u:"un",p:45000,d:"Com fechadura reforçada"},
+  {id:"fechadura",t:"ferro",n:"Abrir ou trocar fechadura",u:"serviço",p:3500,d:"Sem estragar a porta"},
+  {id:"estrutura",t:"ferro",n:"Cobertura ou estrutura metálica",u:"m²",p:9000,d:"Telheiro, pérgula, terraço"},
+  {id:"antic",t:"ferro",n:"Tratar ferrugem",u:"m²",p:2500,d:"Lixar, primário e pintura"},
+  {id:"pint_int",t:"tinta",n:"Pintura interior",u:"m²",p:800,d:"Paredes e tetos, 2 demãos"},
+  {id:"pint_ext",t:"tinta",n:"Pintura de fachada",u:"m²",p:1100,d:"Tinta exterior resistente ao sol"},
+  {id:"imperm",t:"tinta",n:"Impermeabilizar terraço",u:"m²",p:1800,d:"Acaba com infiltrações quando chove"},
+  {id:"humid",t:"tinta",n:"Tratar humidade e bolor",u:"m²",p:1300,d:"Limpeza, primário e tinta anti-fungos"},
+  {id:"fissuras",t:"tinta",n:"Reparar fissuras e reboco",u:"m²",p:1200,d:"Antes de pintar"},
+  {id:"pint_metal",t:"tinta",n:"Pintar portões e grades",u:"m²",p:1500,d:"Com primário anticorrosão"}
+];
+const DEFAULT_PRICE = Object.fromEntries(SERVICES.map(s=>[s.id,s.p]));
+SERVICES.forEach(s=>{ const p=+SITE.prices[s.id]; if(p>0) s.p=p; });
+const SV = Object.fromEntries(SERVICES.map(s=>[s.id,s]));
+const ZONES = [
+  ["Praia",1000],["Ribeira Grande de Santiago · Cidade Velha",1500],["São Domingos",1500],["São Lourenço dos Órgãos",2000],
+  ["Santa Cruz · Pedra Badejo",2500],["São Salvador do Mundo · Picos",2500],["Santa Catarina · Assomada",2500],["São Miguel · Calheta",3000],["Tarrafal",3500]
+];
+const WHO = {luz:"Eletricista",agua:"Canalizador",ferro:"Serralheiro",tinta:"Pintor"};
+const TIP = {
+  luz:"<b>Cortes de luz?</b> Instalamos baterias para o frigorífico e as luzes continuarem a funcionar.",
+  agua:"<b>Falta de água?</b> Dizemos o tamanho certo de cisterna e bomba para a sua família.",
+  ferro:"<b>Ferrugem?</b> Usamos ferro galvanizado e inox, que aguentam a maresia.",
+  tinta:"<b>Sol forte e chuva?</b> Usamos tintas exteriores que não desbotam e impermeabilizamos terraços."
+};
+$("#trades").innerHTML = AREAS.map(t=>`
+  <article class="trade ${t}">
+    <div class="top">${icon(t,"big-ico")}<div class="ico">${icon(t)}</div><div><h3>${TRADE[t]}</h3><p class="who">${WHO[t]} em Santiago</p></div></div>
+    <ul>${SERVICES.filter(s=>s.t===t&&s.id!=="diag").slice(0,6).map(s=>`<li><span>${s.n}</span><span class="num">desde ${fmt(s.p)}</span></li>`).join("")}</ul>
+    <p class="tip">${TIP[t]}</p>
+    <div class="act"><a class="btn btn-ghost btn-sm" href="#orcamento" data-tab="${t}">Pedir orçamento →</a></div>
+  </article>`).join("");
+
+/* ===== AVARIA ===== */
+const DIAG = {
+  luz:[
+    {s:"Cheiro a queimado ou tomada quente",v:"c",safe:"Desligue já o disjuntor geral no quadro. Não toque na tomada.",why:["Fio solto ou demasiado fino","Perigo de incêndio"],svc:"diag"},
+    {s:"Leva choque na torneira ou no chuveiro",v:"c",safe:"Não use o chuveiro. Desligue o quadro elétrico e chame-nos.",why:["Falta de ligação à terra","Aparelho com defeito"],svc:"quadro"},
+    {s:"O disjuntor desliga sempre",v:"m",safe:"Desligue o ar condicionado, o forno e o ferro. Volte a ligar um de cada vez.",why:["Demasiados aparelhos no mesmo circuito","Humidade numa tomada","Quadro antigo"],svc:"quadro"},
+    {s:"Só a minha casa está sem luz",v:"m",safe:"Veja se o disjuntor geral está ligado. Se os vizinhos também não têm luz, é corte da Electra.",why:["Disjuntor geral desligado","Problema no contador"],svc:"diag"},
+    {s:"A conta da luz está muito alta",v:"b",safe:"Não é perigoso. Com tudo desligado, veja se o contador continua a andar.",why:["Fuga de corrente","Aparelhos antigos","Painéis solares podem ajudar"],svc:"solar"}
+  ],
+  agua:[
+    {s:"Água a sair pelo teto ou parede",v:"c",safe:"Feche a torneira geral e desligue a bomba. Se a água tocar em tomadas, desligue o quadro.",why:["Cano rebentado","Fuga na casa de banho de cima"],svc:"fuga"},
+    {s:"Não há pressão ou a bomba não liga",v:"m",safe:"Veja se a cisterna tem água. Se estiver vazia, desligue a bomba para não queimar.",why:["Cisterna vazia","Bomba avariada"],svc:"autoclave"},
+    {s:"Esgoto entupido ou mau cheiro",v:"m",safe:"Não deite produtos químicos fortes. Evite usar a sanita até à reparação.",why:["Gordura acumulada","Caixa de esgoto entupida"],svc:"desent"},
+    {s:"Água da cisterna suja ou com cheiro",v:"m",safe:"Não beba nem cozinhe com essa água até a cisterna ser limpa.",why:["Lama no fundo","Falta de limpeza"],svc:"cisterna"},
+    {s:"Torneira a pingar",v:"b",safe:"Não é perigoso, mas gasta mais de 30 litros de água por dia.",why:["Borracha gasta"],svc:"torneira"}
+  ],
+  ferro:[
+    {s:"Fiquei trancado fora de casa",v:"c",safe:"Não force a porta nem a janela. Ligue-nos: abrimos sem estragar.",why:["Chave perdida ou partida","Fechadura encravada"],svc:"fechadura"},
+    {s:"Corrimão ou guarda da varanda solta",v:"c",safe:"Não deixe crianças na varanda até à reparação.",why:["Ferro comido pela maresia","Betão rachado"],svc:"corrimao"},
+    {s:"O portão está preso ou arrasta",v:"m",safe:"Não force. Se tiver motor, desligue-o.",why:["Dobradiças gastas","Areia na calha","Ferrugem"],svc:"portao"},
+    {s:"Grades ou portão com ferrugem",v:"b",safe:"Não é urgente, mas tratar agora sai muito mais barato do que trocar depois.",why:["Maresia","Pintura sem proteção"],svc:"antic"},
+    {s:"Quero mais segurança em casa",v:"b",safe:"Comece pelas janelas do rés-do-chão e pela porta da entrada.",why:["Grades nas janelas","Porta de segurança"],svc:"grade"}
+  ],
+  tinta:[
+    {s:"Entra água pelo teto quando chove",v:"m",safe:"Afaste móveis e aparelhos elétricos da zona molhada. Se a água tocar num candeeiro, desligue o quadro.",why:["Terraço sem impermeabilização","Fissuras na laje"],svc:"imperm"},
+    {s:"Manchas de humidade ou bolor nas paredes",v:"m",safe:"Areje a divisão todos os dias. Não pinte por cima do bolor: ele volta a aparecer.",why:["Infiltração","Falta de ventilação","Tinta errada"],svc:"humid"},
+    {s:"Paredes com rachas",v:"b",safe:"Rachas finas não são perigosas. Se uma racha crescer ou for larga, avise-nos para avaliarmos.",why:["Reboco antigo","Dilatação com o calor"],svc:"fissuras"},
+    {s:"Tinta da fachada a descascar",v:"b",safe:"Não é urgente, mas a parede sem tinta absorve água e estraga-se mais depressa.",why:["Sol e maresia","Tinta interior usada no exterior"],svc:"pint_ext"},
+    {s:"Quero pintar a casa",v:"b",safe:"Escolha as cores com calma. Fazemos a medição e o orçamento sem compromisso.",why:["Interior, exterior ou os dois"],svc:"pint_int"}
+  ]
+};
+const SEVTXT = {c:"Urgente",m:"Atenção",b:"Pode esperar"};
+let dArea="luz", dIdx=-1;
+function drawDiag(){
+  $("#diagArea").innerHTML = AREAS.map(t=>`<button type="button" aria-pressed="${t===dArea}" data-a="${t}"><i class="dot ${t}"></i>${TRADE[t]}</button>`).join("");
+  $("#diagSym").innerHTML = DIAG[dArea].map((x,i)=>`<button type="button" aria-pressed="${i===dIdx}" data-i="${i}"><span>${x.s}</span><span class="sev ${x.v}">${SEVTXT[x.v]}</span></button>`).join("");
+  if(dIdx<0){
+    $("#diagResult").innerHTML = `<div class="hint">${icon("search")}<h3>Escolha o problema</h3><p class="note" style="font-size:1rem;max-width:34ch">Toque num dos problemas da lista. Aqui aparece o que deve fazer já e o serviço que precisa.</p><a class="btn btn-wa btn-sm" href="${wa("Olá Tozé! Tenho uma avaria e preciso de ajuda.")}" target="_blank" rel="noopener">${icon("wa")}O meu problema não está na lista</a></div>`;
+    return;
+  }
+  const x = DIAG[dArea][dIdx], s = SV[x.svc];
+  const msg = `Olá Tozé! Tenho uma avaria:\nÁrea: ${TRADE[dArea]}\nProblema: ${x.s}\nLocal: `;
+  $("#diagResult").innerHTML = `
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><span class="chip ${dArea}"><i class="dot ${dArea}"></i>${TRADE[dArea]}</span><span class="sev ${x.v}">${SEVTXT[x.v]}</span></div>
+    <h3>${x.s}</h3>
+    <div class="safety ${x.v}"><b>O que fazer agora</b>${x.safe}</div>
+    <div><span class="flabel">Causas mais comuns</span><ul style="margin-top:6px">${x.why.map(w=>`<li>${w}</li>`).join("")}</ul></div>
+    <div><span class="flabel">Serviço que precisa</span><div><b>${s.n}</b> · <span style="color:var(--muted)">desde ${fmt(s.p)}</span></div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a class="btn ${x.v==="c"?"btn-wa":"btn-brand"} btn-sm" href="${wa(msg)}" target="_blank" rel="noopener">${icon("wa")}${x.v==="c"?"Chamar técnico já":"Pedir técnico"}</a>
+      <button class="btn btn-ghost btn-sm" type="button" id="diagAdd">Juntar ao orçamento</button>
+    </div>`;
+  $("#diagAdd").onclick = () => { addQty(x.svc,1); toast(s.n+" juntado ao orçamento"); };
+}
+$("#diagArea").addEventListener("click",e=>{const b=e.target.closest("button");if(b){dArea=b.dataset.a;dIdx=-1;drawDiag()}});
+$("#diagSym").addEventListener("click",e=>{const b=e.target.closest("button");if(b){dIdx=+b.dataset.i;drawDiag()}});
+
+/* ===== ORÇAMENTO ===== */
+const qty = {};
+let catTab = "luz";
+const ref = "TZ-"+new Date().toISOString().slice(2,10).replace(/-/g,"")+"-"+String(Math.floor(100+Math.random()*900));
+$("#qIsland").innerHTML = ZONES.map((x,i)=>`<option value="${i}">${x[0]}</option>`).join("");
+$("#qDate").value = new Date(Date.now()+2*864e5).toISOString().slice(0,10);
+$("#qDate").min = new Date().toISOString().slice(0,10);
+
+function addQty(id,n){ qty[id]=Math.max(0,(qty[id]||0)+n); if(!qty[id]) delete qty[id]; drawQuote(); }
+function drawCatalog(){
+  $("#catTabs").innerHTML = AREAS.map(t=>{const c=SERVICES.filter(s=>s.t===t&&qty[s.id]).length;return `<button type="button" aria-pressed="${t===catTab}" data-t="${t}"><i class="dot ${t}"></i>${TRADE[t]}${c?` (${c})`:""}</button>`}).join("");
+  $("#catalog").innerHTML = SERVICES.filter(s=>s.t===catTab).map(s=>`
+    <div class="item ${qty[s.id]?"has":""}">
+      <span class="nm">${s.n}</span>
+      <span class="ds">${s.d}</span>
+      <span class="pr">${fmt(s.p)} por ${s.u}</span>
+      <div class="stepper"><button type="button" data-id="${s.id}" data-n="-1" aria-label="Menos ${s.n}">−</button><output>${qty[s.id]||0}</output><button type="button" class="plus" data-id="${s.id}" data-n="1" aria-label="Mais ${s.n}">+</button></div>
+    </div>`).join("");
+}
+function calc(){
+  const tier=+$("#qTier").value, urg=+$("#qUrg").value, zone=ZONES[+$("#qIsland").value];
+  const lines=Object.entries(qty).map(([id,q])=>({s:SV[id],q,v:SV[id].p*q*tier*urg}));
+  const sub=lines.reduce((a,l)=>a+l.v,0);
+  const base=lines.length?sub+zone[1]:0, iva=base*CONFIG.iva, total=base+iva;
+  return {lines,zone,iva,total,lo:total*0.9,hi:total*1.15};
+}
+function message(c){
+  const name=$("#qName").value.trim(), bairro=$("#qZone").value.trim(), desc=$("#qDesc").value.trim();
+  const date=$("#qDate").value?new Date($("#qDate").value+"T12:00").toLocaleDateString("pt-PT",{weekday:"long",day:"numeric",month:"long"}):"";
+  let m=`Olá Tozé! Pedido de orçamento ${ref}\n\n`;
+  if(name) m+=`Nome: ${name}\n`;
+  m+=`Local: ${c.zone[0]}${bairro?", "+bairro:""}\n`;
+  if(date) m+=`Dia: ${date}, ${$("#qPeriod").value}\n`;
+  m+=`Quando: ${$("#qUrg").selectedOptions[0].text}\nMaterial: ${$("#qTier").selectedOptions[0].text}\n\nServiços:\n`;
+  m+=c.lines.map(l=>`• ${l.q} ${l.s.u} · ${l.s.n}`).join("\n")||"• (ainda não sei, preciso de ajuda)";
+  if(c.lines.length) m+=`\n\nValor estimado no site: ${fmt(c.lo)} a ${fmt(c.hi)} (com IVA)`;
+  if(desc) m+=`\n\nProblema: ${desc}`;
+  if($("#qPhoto").files.length) m+=`\n\nVou enviar ${$("#qPhoto").files.length} foto(s) a seguir.`;
+  return m;
+}
+function drawQuote(){
+  drawCatalog();
+  const c=calc();
+  $("#qLines").innerHTML = c.lines.length
+    ? c.lines.map(l=>`<div><span>${l.q}× ${l.s.n}</span><span>${fmt(l.v)}</span></div>`).join("")+`<div class="mut"><span>Deslocação (${c.zone[0]})</span><span>${fmt(c.zone[1])}</span></div><div class="mut"><span>IVA 15%</span><span>${fmt(c.iva)}</span></div>`
+    : `<div class="empty">Ainda não escolheu nenhum serviço. Toque em <b>+</b> na lista ao lado.</div>`;
+  $("#qTotal").textContent = c.lines.length ? fmt(c.total) : "—";
+  $("#qEur").textContent = c.lines.length ? `Entre ${fmt(c.lo)} e ${fmt(c.hi)} · cerca de ${eur(c.total)}` : "";
+  $("#sendWa").href = wa(message(c));
+}
+$("#catTabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b){catTab=b.dataset.t;drawCatalog()}});
+$("#catalog").addEventListener("click",e=>{const b=e.target.closest("button[data-id]");if(b)addQty(b.dataset.id,+b.dataset.n)});
+["qIsland","qTier","qUrg","qName","qZone","qDate","qPeriod","qDesc"].forEach(id=>$("#"+id).addEventListener("input",drawQuote));
+$("#copyQuote").onclick=()=>copy(message(calc()));
+$("#quoteForm").addEventListener("submit",e=>e.preventDefault());
+$("#qPhoto").addEventListener("change",e=>{
+  const box=$("#thumbs");box.innerHTML="";
+  [...e.target.files].slice(0,6).forEach(f=>{const r=new FileReader();r.onload=()=>{const i=document.createElement("img");i.src=r.result;i.alt="Foto: "+f.name;box.appendChild(i)};r.readAsDataURL(f)});
+  drawQuote();
+});
+document.querySelectorAll("[data-tab]").forEach(a=>a.addEventListener("click",()=>{catTab=a.dataset.tab;drawCatalog()}));
+
+/* ===== ANTES / DEPOIS (ilustrações; troque por fotos reais) ===== */
+function rnd(seed){return()=>{seed=(seed*16807)%2147483647;return(seed-1)/2147483646}}
+const SC = {
+  quadroB(){const r=rnd(7);let w="";const cols=["#C8443A","#4A6FA5","#D9A441","#222","#3F8F63"];
+    for(let i=0;i<18;i++){const x1=120+r()*160,x2=110+r()*180;w+=`<path d="M${x1} 60 C${60+r()*280} ${80+r()*120} ${60+r()*280} ${60+r()*140} ${x2} 240" fill="none" stroke="${cols[i%5]}" stroke-width="3"/>`}
+    return `<rect width="400" height="280" fill="#C9BFAE"/><rect x="110" y="40" width="180" height="190" rx="4" fill="#E8E1D2" stroke="#6B6354" stroke-width="3"/>
+    ${[0,1,2,3].map(i=>`<circle cx="${145+i*37}" cy="80" r="13" fill="#F6F1E6" stroke="#6B6354" stroke-width="2"/>`).join("")}${w}
+    <ellipse cx="250" cy="110" rx="26" ry="18" fill="#2B2620" opacity=".4"/>`},
+  quadroA(){return `<rect width="400" height="280" fill="#F3F2EF"/><rect x="100" y="34" width="200" height="206" rx="10" fill="#fff" stroke="#17181B" stroke-width="3"/>
+    <rect x="114" y="70" width="172" height="6" fill="#C4BFB5"/><rect x="114" y="146" width="172" height="6" fill="#C4BFB5"/>
+    ${[0,1,2,3,4,5,6].map(i=>`<rect x="${118+i*24}" y="54" width="18" height="38" rx="3" fill="${i===0?"#4A6FA5":"#ECEAE5"}" stroke="#17181B" stroke-width="1.5"/><rect x="${123+i*24}" y="62" width="8" height="10" fill="#17181B"/>`).join("")}
+    ${[0,1,2,3,4,5].map(i=>`<rect x="${118+i*28}" y="130" width="22" height="38" rx="3" fill="#ECEAE5" stroke="#17181B" stroke-width="1.5"/><rect x="${125+i*28}" y="138" width="8" height="10" fill="#17181B"/>`).join("")}
+    ${["GERAL","LUZ","TOM","COZ","AC","WC","SOL"].map((t,i)=>`<text x="${127+i*24}" y="106" text-anchor="middle" font-family="Onest,sans-serif" font-size="7" font-weight="700" fill="#5E6066">${t}</text>`).join("")}
+    <rect x="114" y="188" width="172" height="38" rx="5" fill="#ECEAE5"/>${[0,1,2,3,4,5,6,7].map(i=>`<line x1="${124+i*20}" y1="188" x2="${124+i*20}" y2="226" stroke="${["#C8443A","#4A6FA5","#3F8F63","#D9A441"][i%4]}" stroke-width="3"/>`).join("")}`},
+  portaoB(){const r=rnd(19);let rust="";for(let i=0;i<30;i++)rust+=`<circle cx="${80+r()*240}" cy="${60+r()*180}" r="${3+r()*12}" fill="#9A4A22" opacity="${.35+r()*.5}"/>`;
+    return `<rect width="400" height="280" fill="#BFD4E8"/><rect y="236" width="400" height="44" fill="#B9A78F"/><rect x="0" y="40" width="70" height="200" fill="#CFC3B0"/><rect x="330" y="40" width="70" height="200" fill="#CFC3B0"/>
+    <rect x="76" y="50" width="248" height="186" fill="none" stroke="#7D756A" stroke-width="6"/>
+    ${[0,1,2,3,4,5,6,7,8].map(i=>{const x=100+i*25;return i===3||i===6?`<path d="M${x} 50 Q${x+14} 140 ${x} 236" fill="none" stroke="#7D756A" stroke-width="5"/>`:`<line x1="${x}" y1="50" x2="${x}" y2="236" stroke="#7D756A" stroke-width="5"/>`}).join("")}
+    <line x1="76" y1="143" x2="324" y2="148" stroke="#7D756A" stroke-width="5"/>${rust}`},
+  portaoA(){return `<rect width="400" height="280" fill="#9CC8F0"/><rect y="236" width="400" height="44" fill="#C9B9A0"/><rect x="0" y="40" width="70" height="200" fill="#F4F0E8"/><rect x="330" y="40" width="70" height="200" fill="#F4F0E8"/>
+    <rect x="76" y="50" width="248" height="186" fill="none" stroke="#17181B" stroke-width="6"/>
+    ${[0,1,2,3,4,5,6,7,8].map(i=>{const x=100+i*25;return `<line x1="${x}" y1="38" x2="${x}" y2="236" stroke="#17181B" stroke-width="5"/><path d="M${x-6} 42 L${x} 30 L${x+6} 42Z" fill="#D9A441"/>`}).join("")}
+    <line x1="76" y1="143" x2="324" y2="143" stroke="#17181B" stroke-width="5"/><rect x="190" y="131" width="20" height="24" rx="3" fill="#D9A441"/>`},
+  canoB(){return `<rect width="400" height="280" fill="#CFC6B6"/><ellipse cx="200" cy="130" rx="120" ry="76" fill="#6E6556" opacity=".3"/>
+    <rect x="0" y="80" width="400" height="16" fill="#8B8578"/><rect x="180" y="72" width="40" height="32" rx="4" fill="#4A4438" opacity=".7"/>
+    ${[0,1,2,3].map(i=>`<ellipse cx="${192+i*6}" cy="${124+i*26}" rx="3" ry="5" fill="#4E9AA6"/>`).join("")}
+    <rect y="244" width="400" height="36" fill="#A9997F"/><ellipse cx="205" cy="246" rx="90" ry="10" fill="#4E9AA6" opacity=".55"/>`},
+  canoA(){return `<rect width="400" height="280" fill="#F5F4F1"/><rect x="0" y="80" width="400" height="12" fill="#4E9AA6"/><rect x="0" y="112" width="290" height="12" fill="#C8443A" opacity=".85"/>
+    <path d="M170 70 L190 86 L170 102Z M210 70 L190 86 L210 102Z" fill="#17181B"/><rect x="186" y="54" width="8" height="18" fill="#17181B"/><rect x="176" y="48" width="28" height="8" rx="3" fill="#C8443A"/>
+    <rect x="290" y="124" width="80" height="110" rx="20" fill="#4E9AA6"/><circle cx="330" cy="156" r="14" fill="#fff" stroke="#17181B" stroke-width="2"/><line x1="330" y1="156" x2="338" y2="148" stroke="#17181B" stroke-width="2"/>
+    <rect x="330" y="80" width="12" height="44" fill="#4E9AA6"/><rect y="244" width="400" height="36" fill="#D9CFBE"/>`},
+  paredeB(){const r=rnd(31);let peel="";for(let i=0;i<14;i++){const x=40+r()*320,y=30+r()*190;peel+=`<path d="M${x} ${y} l${10+r()*24} ${-4+r()*10} l${-6+r()*10} ${8+r()*18} l${-14-r()*18} ${-2+r()*6}Z" fill="#B7AE9C"/>`}
+    return `<rect width="400" height="280" fill="#D8CDB8"/>${peel}<ellipse cx="80" cy="60" rx="60" ry="40" fill="#5F6B4E" opacity=".35"/><ellipse cx="320" cy="210" rx="70" ry="45" fill="#5F6B4E" opacity=".3"/>
+    <path d="M220 20 l-10 40 l14 30 l-12 50" fill="none" stroke="#6B6354" stroke-width="2.5"/>
+    <rect x="150" y="96" width="100" height="90" rx="4" fill="#9AA6B8" stroke="#6B6354" stroke-width="4"/><rect y="244" width="400" height="36" fill="#A9997F"/>`},
+  paredeA(){return `<rect width="400" height="280" fill="#F4EEE3"/><rect y="0" width="400" height="14" fill="#8C7BB8" opacity=".85"/>
+    <rect x="150" y="96" width="100" height="90" rx="4" fill="#BFE0F5" stroke="#17181B" stroke-width="4"/><line x1="200" y1="96" x2="200" y2="186" stroke="#17181B" stroke-width="3"/>
+    <rect x="140" y="186" width="120" height="8" rx="2" fill="#17181B"/><path d="M296 244 v-40 q10 -28 24 -10 q14 -26 22 6 v44Z" fill="#1E8C6A"/><rect x="300" y="226" width="40" height="18" rx="3" fill="#C2704E"/>
+    <rect y="244" width="400" height="36" fill="#D9CFBE"/>`}
+};
+const JOBS = [
+  {t:"luz",n:"Quadro elétrico novo",z:"Palmarejo, Praia",d:"2 dias",b:"quadroB",a:"quadroA"},
+  {t:"ferro",n:"Portão galvanizado",z:"Achada Santo António, Praia",d:"5 dias",b:"portaoB",a:"portaoA"},
+  {t:"agua",n:"Fuga reparada e bomba nova",z:"Assomada",d:"1 dia",b:"canoB",a:"canoA"},
+  {t:"tinta",n:"Sala tratada e pintada",z:"Fazenda, Praia",d:"3 dias",b:"paredeB",a:"paredeA"}
+];
+const REAL_JOBS = SITE.jobs.filter(j=>blobUrl(j.before)&&blobUrl(j.after)&&TRADE[j.t]);
+if (REAL_JOBS.length) $("#gallery").innerHTML = REAL_JOBS.map(j=>`
+  <article class="ba">
+    <div class="ba-view" style="--pos:50%">
+      <img class="before" src="${blobUrl(j.before)}" alt="Antes: ${esc(j.n)}" loading="lazy">
+      <img class="after" src="${blobUrl(j.after)}" alt="Depois: ${esc(j.n)}" loading="lazy">
+      <span class="tag b">Antes</span><span class="tag a">Depois</span><span class="handle"></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois: ${esc(j.n)}">
+    </div>
+    <div class="ba-body"><span class="chip ${j.t}" style="justify-self:start"><i class="dot ${j.t}"></i>${TRADE[j.t]}</span><b>${esc(j.n)}</b><div class="meta">${j.z?`<span>${esc(j.z)}</span>`:""}${j.d?`<span>Feito em ${esc(j.d)}</span>`:""}</div></div>
+  </article>`).join("");
+else $("#gallery").innerHTML = JOBS.map(j=>`
+  <article class="ba">
+    <div class="ba-view" style="--pos:50%">
+      <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" class="before" aria-hidden="true">${SC[j.b]()}</svg>
+      <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" class="after" aria-hidden="true">${SC[j.a]()}</svg>
+      <span class="tag b">Antes</span><span class="tag a">Depois</span><span class="handle"></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois: ${j.n}">
+    </div>
+    <div class="ba-body"><span class="chip ${j.t}" style="justify-self:start"><i class="dot ${j.t}"></i>${TRADE[j.t]}</span><b>${j.n}</b><div class="meta"><span>${j.z}</span><span>Feito em ${j.d}</span></div></div>
+  </article>`).join("");
+$("#gallery").addEventListener("input",e=>{if(e.target.type==="range")e.target.parentElement.style.setProperty("--pos",e.target.value+"%")});
+
+/* ===== SOLAR ===== */
+let lastKwp=2;
+function solar(){
+  const bill=+$("#sBill").value, price=Math.max(1,+$("#sPrice").value||30), cover=+$("#sCover").value;
+  const kwh=bill/price, kwp=Math.max(0.5,Math.round(kwh*cover/(4.8*30)*2)/2);
+  const cost=kwp*SV.solar.p*(cover>0.8?1.45:1), save=Math.min(bill,kwp*4.8*30*price);
+  lastKwp=kwp;
+  $("#sBillV").textContent=fmt(bill);
+  $("#sKwp").textContent=kwp.toLocaleString("pt-PT")+" kWp";
+  $("#sCost").textContent=fmt(cost);
+  $("#sSave").textContent=fmt(save);
+  $("#sPay").textContent=(cost/(save*12)).toLocaleString("pt-PT",{maximumFractionDigits:1})+" anos";
+}
+["sBill","sPrice","sCover"].forEach(id=>$("#"+id).addEventListener("input",solar));
+$("#solarToQuote").onclick=()=>{qty.solar=lastKwp;catTab="luz";drawQuote();toast("Painéis solares juntados ao orçamento");location.hash="orcamento"};
+
+/* ===== ÁGUA ===== */
+function water(){
+  const p=+$("#wPeople").value, d=+$("#wDays").value, u=+$("#wUse").value;
+  $("#wPeopleV").textContent=p+(p>1?" pessoas":" pessoa");
+  $("#wDaysV").textContent=d+" dias";
+  $("#wVol").textContent=(p*d*u*1.15/1000).toLocaleString("pt-PT",{maximumFractionDigits:1})+" m³";
+  $("#wPump").textContent=(p<=4?"0,5":p<=8?"0,75":"1,1")+" kW";
+}
+["wPeople","wDays","wUse"].forEach(id=>$("#"+id).addEventListener("input",water));
+
+/* ===== LIGAÇÕES ===== */
+document.querySelectorAll("[data-cfg]").forEach(el=>el.textContent=CONFIG[el.dataset.cfg]);
+const URG = wa("URGÊNCIA - Olá Tozé, preciso de um técnico agora.\nLocal: \nProblema: ");
+$("#urgTop").href=$("#ctaUrg").href=URG;
+const HELLO = wa("Olá Tozé! Vi o vosso site e preciso de ajuda.");
+$("#heroWa").href=$("#fab").href=$("#ctaWa").href=HELLO;
+document.querySelectorAll(".plan-wa").forEach(a=>a.href=wa(`Olá Tozé! Tenho interesse no plano "${a.dataset.plan}".`));
+const linkOrHide = (url, ...ids) => ids.forEach(id => { const el = $(id); if (url) el.href = url; else el.hidden = true; });
+linkOrHide(CONFIG.facebook, "#cFb");
+linkOrHide(CONFIG.instagram, "#cIg");
+linkOrHide(CONFIG.site && "https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(CONFIG.site), "#fbShare");
+if (!CONFIG.email) { $("#emailWrap").hidden = true; $("#phoneTitle").textContent = "Telefone"; }
+$("#copyPhone").onclick=()=>copy(CONFIG.phone);
+
+/* ===== DADOS DO ADMINISTRADOR: aviso, horário, opiniões ===== */
+if (SITE.notice) { $("#notice").textContent = SITE.notice; $("#notice").hidden = false; }
+if (SITE.hours.week) $("#hWeek").textContent = SITE.hours.week;
+if (SITE.hours.sat) $("#hSat").textContent = SITE.hours.sat;
+const realReviews = SITE.reviews.filter(r=>r && r.text);
+if (realReviews.length) {
+  $("#reviews").innerHTML = realReviews.map(r=>{
+    const s = Math.max(1,Math.min(5,+r.stars||5)), t = TRADE[r.t] ? r.t : "luz";
+    return `<article class="review"><div class="stars" aria-label="${s} estrelas">${"★".repeat(s)}${"☆".repeat(5-s)}</div><p>"${esc(r.text)}"</p><footer><span class="av" style="background:var(--${t})">${esc((r.name||"C").trim().charAt(0).toUpperCase())}</span><span>${esc(r.name||"Cliente")}${r.place?" · "+esc(r.place):""}<br>${TRADE[t]}</span></footer></article>`;
+  }).join("");
+  $("#reviewsNote").hidden = true;
+}
+
+drawDiag(); drawQuote(); solar(); water();
+
+/* header: shrink on scroll, gold progress line, highlight the menu item of the section on screen */
+(()=>{
+  const hd=document.getElementById("topHeader");
+  const onScroll=()=>{
+    const y=window.scrollY, max=document.documentElement.scrollHeight-innerHeight;
+    hd.classList.toggle("scrolled", y>30);
+    hd.style.setProperty("--prog", max>0? Math.min(1,y/max).toFixed(4) : 0);
+  };
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  const links=[...document.querySelectorAll("nav.main a")];
+  const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove("active")); const a=map.get(e.target.id); if(a){a.classList.add("active"); if(a.scrollIntoView && innerWidth<960) a.parentElement.scrollTo({left:a.offsetLeft-16,behavior:"smooth"});} } });
+    },{rootMargin:"-45% 0px -50% 0px"});
+    map.forEach((a,id)=>{const s=document.getElementById(id); if(s) io.observe(s);});
+  }
+})();
+
+/* ===== ADMINISTRADOR =====
+   The owner unlocks the panel with a GitHub key (token) that can write to this site's repository.
+   "Guardar e publicar" saves data.json (and photos in fotos/) to the repository; GitHub Pages updates the site in 1-2 minutes. */
+(()=>{
+  const G = window.GH, REPO = G.api+"/repos/"+G.owner+"/"+G.repo;
+  const S = JSON.parse(JSON.stringify(SITE));
+  S.contact = Object.assign({whatsapp:CONFIG.whatsapp, phone:CONFIG.phone, email:"", facebook:"", fbName:"", instagram:"", igName:""}, S.contact);
+  S.hours = Object.assign({week:$("#hWeek").textContent, sat:$("#hSat").textContent}, S.hours);
+  let tab = "contactos", busy = false, key = null;
+  const body = $("#admBody"), status = $("#admStatus"), saveBtn = $("#admSave"), outBtn = $("#admOut");
+  const setStatus = (m, bad) => { status.textContent = m; status.style.color = bad ? "var(--danger)" : ""; };
+  const TABS = [["contactos","Contactos"],["precos","Preços"],["opinioes","Opiniões"],["fotos","Fotos de trabalhos"],["aviso","Aviso e horário"]];
+  const tradeOpts = sel => AREAS.map(t=>`<option value="${t}"${t===sel?" selected":""}>${TRADE[t]}</option>`).join("");
+  const field = (label, path, val, type="text", ph="") => `<label>${label}<input type="${type}" data-path="${path}" value="${esc(val||"")}" placeholder="${esc(ph)}"></label>`;
+  const NEWKEY = "https://github.com/settings/tokens/new?scopes=public_repo&description="+encodeURIComponent("Painel do site Toze");
+
+  /* the key is remembered on this device only */
+  const store = v => { try { v ? localStorage.setItem("tz_key", v) : localStorage.removeItem("tz_key"); } catch(e){} };
+  try { key = localStorage.getItem("tz_key"); } catch(e) { key = null; }
+
+  const gh = (path, opt={}) => fetch(REPO+path, Object.assign({}, opt, {headers:Object.assign({Accept:"application/vnd.github+json", Authorization:"Bearer "+key}, opt.headers||{})}));
+  const b64text = s => { const b = new TextEncoder().encode(s); let r = ""; for (let i=0;i<b.length;i+=0x8000) r += String.fromCharCode.apply(null, b.subarray(i,i+0x8000)); return btoa(r); };
+  const b64blob = blob => new Promise((res,rej)=>{ const fr = new FileReader(); fr.onload = () => res(String(fr.result).split(",")[1]); fr.onerror = rej; fr.readAsDataURL(blob); });
+
+  async function check(k){
+    const r = await fetch(REPO, {headers:{Accept:"application/vnd.github+json", Authorization:"Bearer "+k}});
+    if (r.status===401) throw {code:"bad_key"};
+    if (!r.ok) throw {code: r.status===404 ? "no_repo" : "network"};
+    const j = await r.json();
+    if (!j.permissions || !j.permissions.push) throw {code:"forbidden"};
+    G.branch = j.default_branch || G.branch;
+  }
+  function logout(){ key = null; store(null); $("#admOpen").hidden = true; }
+
+  async function putFile(path, content, message){
+    let sha;
+    const cur = await gh("/contents/"+path+"?ref="+G.branch+"&t="+Date.now());
+    if (cur.ok) sha = (await cur.json()).sha;
+    else if (cur.status===401) throw {code:"bad_key"};
+    const r = await gh("/contents/"+path, {method:"PUT", headers:{"Content-Type":"application/json"}, body:JSON.stringify({message, content, branch:G.branch, sha})});
+    if (r.status===401) throw {code:"bad_key"};
+    if (r.status===403 || r.status===404) throw {code:"forbidden"};
+    if (r.status===409) throw {code:"conflict"};
+    if (!r.ok) throw {code:"save"};
+  }
+
+  function render(){
+    const logged = !!key;
+    $("#admTabs").hidden = !logged; saveBtn.hidden = !logged; outBtn.hidden = !logged;
+    if (!G.owner || !G.repo) {
+      body.innerHTML = `<p class="adm-help"><b>O painel só funciona com o site no GitHub Pages.</b><br>Abra o site no endereço <b>utilizador.github.io</b> para entrar.</p>`;
+      $("#admTabs").hidden = true; saveBtn.hidden = true; outBtn.hidden = true; return;
+    }
+    if (!logged) {
+      body.innerHTML = `<form id="admLogin" class="adm-grid" style="max-width:520px">
+        <p class="adm-help" style="grid-column:1/-1">Para entrar, cole a sua <b>chave do GitHub</b>. Só precisa de fazer isto uma vez em cada telemóvel ou computador.</p>
+        <label style="grid-column:1/-1">Chave do GitHub<input type="password" id="lKey" autocomplete="off" spellcheck="false" required placeholder="ghp_..."></label>
+        <button class="adm-save" type="submit" id="lGo" style="justify-self:start">Entrar</button>
+        <p class="adm-help" style="grid-column:1/-1">Ainda não tem chave? <a href="${NEWKEY}" target="_blank" rel="noopener" style="color:var(--gold-3);font-weight:700">Criar a chave no GitHub</a>: escolha a validade, carregue em <b>Generate token</b> e copie o código que aparece.</p></form>`;
+      return;
+    }
+    $("#admTabs").innerHTML = TABS.map(([k,l])=>`<button type="button" data-tab="${k}" aria-pressed="${k===tab}">${l}</button>`).join("");
+    let h = "";
+    if (tab==="contactos") { const c = S.contact;
+      h = `<p class="adm-help">Os campos vazios ficam escondidos no site.</p><div class="adm-grid">
+        ${field("WhatsApp (238 + número, sem espaços)","contact.whatsapp",c.whatsapp,"tel","2389721203")}
+        ${field("Telefone (como aparece no site)","contact.phone",c.phone,"text","+238 972 12 03")}
+        ${field("E-mail","contact.email",c.email,"email","nome@exemplo.cv")}
+        ${field("Link do Facebook","contact.facebook",c.facebook,"url","https://www.facebook.com/...")}
+        ${field("Nome no Facebook","contact.fbName",c.fbName,"text","facebook.com/toze")}
+        ${field("Link do Instagram","contact.instagram",c.instagram,"url","https://www.instagram.com/...")}
+        ${field("Nome no Instagram","contact.igName",c.igName,"text","@toze")}</div>`;
+    }
+    if (tab==="precos") {
+      h = `<p class="adm-help">Preços "desde", em escudos. O cliente vê estes valores no site e no orçamento.</p>` +
+        AREAS.map(t=>`<h3>${TRADE[t]}</h3><div>${SERVICES.filter(s=>s.t===t).map(s=>`<div class="adm-price"><span>${esc(s.n)} <small style="color:var(--muted)">(por ${esc(s.u)})</small></span><input type="number" min="0" step="50" inputmode="numeric" aria-label="Preço de ${esc(s.n)}" data-price="${s.id}" value="${+S.prices[s.id]>0?S.prices[s.id]:DEFAULT_PRICE[s.id]}"></div>`).join("")}</div>`).join("");
+    }
+    if (tab==="opinioes") {
+      h = `<p class="adm-help">Enquanto não houver opiniões aqui, o site mostra 3 exemplos.</p>` +
+        (S.reviews.length ? S.reviews.map((r,i)=>`<div class="adm-item"><div><b>${esc(r.name||"Cliente")}</b>${r.place?" · "+esc(r.place):""} · ${"★".repeat(Math.max(1,Math.min(5,+r.stars||5)))}<br>${esc(r.text)}</div><button class="adm-del" type="button" data-delrev="${i}">Apagar</button></div>`).join("") : `<p class="adm-help"><b>Ainda não há opiniões reais.</b></p>`) +
+        `<div class="adm-add"><h3>Adicionar opinião</h3><div class="adm-grid">
+          <label>Nome do cliente<input id="rName" placeholder="Ex.: Maria S."></label>
+          <label>Zona<input id="rPlace" placeholder="Ex.: Palmarejo, Praia"></label>
+          <label>Serviço<select id="rT">${tradeOpts("luz")}</select></label>
+          <label>Estrelas<select id="rStars"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label></div>
+          <label>O que o cliente disse<textarea id="rText" maxlength="400"></textarea></label>
+          <button class="adm-sec" type="button" id="rAdd" style="justify-self:start">Adicionar opinião</button></div>`;
+    }
+    if (tab==="fotos") {
+      h = `<p class="adm-help">Para cada trabalho, ponha uma foto de antes e uma de depois. Enquanto não houver fotos aqui, o site mostra 4 desenhos de exemplo. As fotos novas podem demorar 1 a 2 minutos a aparecer.</p>` +
+        (S.jobs.length ? S.jobs.map((j,i)=>`<div class="adm-item"><img src="${blobUrl(j.before)}" alt="Antes"><img src="${blobUrl(j.after)}" alt="Depois"><div><b>${esc(j.n)}</b><br>${TRADE[j.t]||""}${j.z?" · "+esc(j.z):""}</div><button class="adm-del" type="button" data-deljob="${i}">Apagar</button></div>`).join("") : `<p class="adm-help"><b>Ainda não há fotos reais.</b></p>`) +
+        `<div class="adm-add"><h3>Adicionar trabalho</h3><div class="adm-grid">
+          <label>Título<input id="jN" placeholder="Ex.: Portão galvanizado"></label>
+          <label>Serviço<select id="jT">${tradeOpts("ferro")}</select></label>
+          <label>Zona<input id="jZ" placeholder="Ex.: Achada Santo António, Praia"></label>
+          <label>Tempo do trabalho<input id="jD" placeholder="Ex.: 3 dias"></label>
+          <label>Foto ANTES<input type="file" id="jB" accept="image/*"></label>
+          <label>Foto DEPOIS<input type="file" id="jA" accept="image/*"></label></div>
+          <button class="adm-sec" type="button" id="jAdd" style="justify-self:start">Carregar fotos e adicionar</button></div>`;
+    }
+    if (tab==="aviso") {
+      h = `<label>Aviso no topo do site (deixe vazio para esconder)<input data-path="notice" value="${esc(S.notice||"")}" maxlength="160" placeholder="Ex.: Pintura interior com 10% de desconto até 31 de dezembro"></label>
+        <div class="adm-grid">${field("Horário de segunda a sexta","hours.week",S.hours.week,"text","08:00 – 19:00")}${field("Horário de sábado","hours.sat",S.hours.sat,"text","08:00 – 13:00")}</div>`;
+    }
+    body.innerHTML = h;
+  }
+
+  body.addEventListener("input", e => {
+    const p = e.target.dataset.path;
+    if (p) { let v = e.target.value.trim(); if (p==="contact.whatsapp") v = v.replace(/\D/g,""); const [a,b] = p.split("."); if (b) S[a][b] = v; else S[a] = v; }
+    const id = e.target.dataset.price;
+    if (id) { const v = Math.round(+e.target.value); if (v>0 && v!==DEFAULT_PRICE[id]) S.prices[id] = v; else delete S.prices[id]; }
+  });
+
+  body.addEventListener("submit", async e => {
+    if (e.target.id!=="admLogin") return;
+    e.preventDefault();
+    const go = $("#lGo"), k = $("#lKey").value.trim(); go.disabled = true; setStatus("A verificar a chave...");
+    try {
+      await check(k);
+      key = k; store(k); $("#admOpen").hidden = false; render(); setStatus("Bem-vindo! Faça as alterações e carregue em Guardar e publicar.");
+    } catch(err) {
+      const c = err && err.code;
+      setStatus(c==="bad_key" ? "Chave errada ou fora de validade." : c==="forbidden" ? "Esta chave não pode alterar este site." : c==="no_repo" ? "Esta chave não tem acesso a este site." : "Sem ligação. Verifique a internet e tente de novo.", true);
+      go.disabled = false;
+    }
+  });
+
+  async function shrink(file){
+    const bmp = await createImageBitmap(file);
+    const k = Math.min(1, 1600/Math.max(bmp.width,bmp.height));
+    const c = document.createElement("canvas"); c.width = Math.round(bmp.width*k); c.height = Math.round(bmp.height*k);
+    c.getContext("2d").drawImage(bmp,0,0,c.width,c.height);
+    return await new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error("blob")),"image/jpeg",.84));
+  }
+  async function upload(file, label){
+    const name = Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10)+".jpg";
+    await putFile("fotos/"+name, await b64blob(await shrink(file)), "Foto "+label);
+    return name;
+  }
+  const fail = (err, what) => {
+    const c = err && err.code;
+    if (c==="bad_key") { logout(); render(); setStatus("A chave deixou de funcionar. Cole uma chave nova.", true); return; }
+    setStatus(c==="forbidden" ? "Esta chave não pode alterar este site." : c==="conflict" ? "O site foi alterado ao mesmo tempo. Tente de novo." : "Não foi possível "+what+". Verifique a internet e tente de novo.", true);
+  };
+
+  document.addEventListener("click", async e => {
+    const t = e.target.closest("button"); if (!t || !$("#adm").contains(t)) return;
+    if (t.dataset.tab) { tab = t.dataset.tab; render(); }
+    if (t.dataset.delrev) { S.reviews.splice(+t.dataset.delrev,1); render(); setStatus("Opinião retirada. Carregue em Guardar e publicar."); }
+    if (t.dataset.deljob) { S.jobs.splice(+t.dataset.deljob,1); render(); setStatus("Trabalho retirado. Carregue em Guardar e publicar."); }
+    if (t.id==="rAdd") {
+      const text = $("#rText").value.trim(); if (!text) { setStatus("Escreva o que o cliente disse.", true); return; }
+      S.reviews.push({name:$("#rName").value.trim(), place:$("#rPlace").value.trim(), t:$("#rT").value, stars:+$("#rStars").value, text});
+      render(); setStatus("Opinião adicionada. Carregue em Guardar e publicar.");
+    }
+    if (t.id==="jAdd") {
+      const fb = $("#jB").files[0], fa = $("#jA").files[0], n = $("#jN").value.trim();
+      if (!n || !fb || !fa) { setStatus("Escreva o título e escolha as duas fotos (antes e depois).", true); return; }
+      t.disabled = true; setStatus("A carregar as fotos...");
+      try {
+        const before = await upload(fb, "antes: "+n), after = await upload(fa, "depois: "+n);
+        S.jobs.push({n, t:$("#jT").value, z:$("#jZ").value.trim(), d:$("#jD").value.trim(), before, after});
+        render(); setStatus("Fotos carregadas. Carregue em Guardar e publicar.");
+      } catch(err) { fail(err, "carregar as fotos"); t.disabled = false; }
+    }
+  });
+
+  saveBtn.onclick = async () => {
+    if (busy) return; busy = true; saveBtn.disabled = true; setStatus("A publicar...");
+    try {
+      await putFile("data.json", b64text(JSON.stringify(S)), "Alterações no painel do administrador");
+      setStatus("Publicado! O site atualiza dentro de 1 a 2 minutos.");
+    } catch(err) { fail(err, "publicar"); }
+    busy = false; saveBtn.disabled = false;
+  };
+  outBtn.onclick = () => { logout(); render(); setStatus("Saiu do painel. A chave foi apagada deste aparelho."); };
+  const open = () => { render(); if (!key) setStatus(""); $("#adm").hidden = false; ($("#lKey") || $("#admClose")).focus(); };
+  $("#admOpen").onclick = open;
+  $("#admClose").onclick = () => { $("#adm").hidden = true; };
+  document.addEventListener("keydown", e => { if (e.key==="Escape" && !$("#adm").hidden) $("#admClose").click(); });
+  $("#admLink").onclick = e => { e.preventDefault(); open(); };
+  if (key) $("#admOpen").hidden = false;
+  if (location.hash==="#admin") open();
+})();
+</script>
+</body>
+</html>
